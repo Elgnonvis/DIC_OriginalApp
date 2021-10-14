@@ -1,0 +1,15 @@
+current directory: /home/elgnonvis/Dive_Into_Code/Ruby/On_rails/OnlineEstateAgency/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/home/elgnonvis/.rbenv/versions/2.6.5/bin/ruby -I /home/elgnonvis/.rbenv/versions/2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20211014-66784-doz7df.rb extconf.rb
+creating Makefile
+
+current directory: /home/elgnonvis/Dive_Into_Code/Ruby/On_rails/OnlineEstateAgency/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /home/elgnonvis/Dive_Into_Code/Ruby/On_rails/OnlineEstateAgency/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/elgnonvis/Dive_Into_Code/Ruby/On_rails/OnlineEstateAgency/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20211014-66784-cbs1n4/skiptrace/internal
