@@ -10,7 +10,7 @@ Things you may want to cover:
 ## Employment Term Technology
 
 * Devise
-* carrierwave
+* Carrierwave
 
 ## Technologies ouside the curriculum
 
@@ -50,11 +50,10 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/0F767
 
 ## Screen Transition Diagram
 
+![Transition diagram](https://user-images.githubusercontent.com/78650220/137474597-c674b301-825f-4a09-b829-3f744bf7b10d.png)
 
-![Transition diagram](https://user-images.githubusercontent.com/78650220/137362136-6d78762e-3a82-4b6c-82fd-6fc21ac1a08d.png)
 
-
-https://cacoo.com/diagrams/82Q17WpL46ib93Q7/802AB
+https://cacoo.com/diagrams/82Q17WpL46ib93Q7/B4CB9
 
 ## Wireframes
 
