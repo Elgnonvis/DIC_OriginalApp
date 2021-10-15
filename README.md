@@ -10,12 +10,13 @@ Things you may want to cover:
 ## Employment Term Technology
 
 * Devise
-* Carrierwave
+* Heroku (deploiment)
+* Comment function using Ajax
 
 ## Technologies ouside the curriculum
 
 * Cloudinary
-* CanCanCan
+
 * Simple_form
 
 ## Execution Procedure
@@ -41,7 +42,8 @@ https://docs.google.com/spreadsheets/d/1syKk-5aY49vF9kH2uyFwl3PEOxw84DTX3WKYys0x
 
 ## ER Diagram
 
-![ER Diagram](https://user-images.githubusercontent.com/78650220/137362038-e6d9006b-964d-40d1-83f5-64d2db6990b3.png)
+![ER Diagram](https://user-images.githubusercontent.com/78650220/137512980-176a3dc4-ff14-4d95-ac2b-f31a4afa870a.png)
+
 
 
 
@@ -50,7 +52,7 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/0F767
 
 ## Screen Transition Diagram
 
-![Transition diagram](https://user-images.githubusercontent.com/78650220/137474597-c674b301-825f-4a09-b829-3f744bf7b10d.png)
+![Transition diagram](https://user-images.githubusercontent.com/78650220/137513077-04c8f1e4-f587-40cf-b9d2-3bc2f870e17a.png)
 
 
 https://cacoo.com/diagrams/82Q17WpL46ib93Q7/B4CB9
