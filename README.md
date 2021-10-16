@@ -31,6 +31,20 @@ $ rails db:seed
 $ rails s
 ```
 
+## Deploy to Heroku
+
+```bash
+$ heroku create Appname
+$ rails assets:precompile RAILS_ENV=production
+$ heroku buildpacks:add heroku/ruby
+$ heroku buildpacks:add --index 1 heroku/nodejs
+$ heroku buildpacks:add https://github.com/heroku/heroku-buildpack-nginx
+$ git add .
+$ git commit -am "init"
+$ git push heroku master
+$ heroku logs -t
+```
+
 ## Catalog Design
 
 https://docs.google.com/spreadsheets/d/1syKk-5aY49vF9kH2uyFwl3PEOxw84DTX3WKYys0xkvE/edit?usp=sharing
@@ -52,7 +66,8 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/0F767
 
 ## Screen Transition Diagram
 
-![Transition diagram](https://user-images.githubusercontent.com/78650220/137547249-1b1ca421-8fe9-44a4-8425-4eda0cd013e2.png)
+![Transition diagram](https://user-images.githubusercontent.com/78650220/137585962-6ffe00df-5065-4922-b6fb-f2e0cafb3efb.png)
+
 
 
 https://cacoo.com/diagrams/82Q17WpL46ib93Q7/B4CB9

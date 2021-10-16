@@ -12,6 +12,8 @@ ruby '2.6.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.8'
 gem 'devise-bootstrap-views', '~> 1.1'
+gem 'cancancan', '~> 3.3'
+gem 'mail_form', '~> 1.9'
 
 
 #Image..
@@ -22,6 +24,7 @@ gem 'carrierwave', '~> 2.0'
 # Middleware
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'unicorn'
 
 # Frontend
 gem 'kaminari'
@@ -39,10 +42,10 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 #Internationalization
-# gem 'i18n', '~> 0.7.0'
+# gem 'i18n'
 
 
-# gem 'rexml'
+gem 'rexml'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring'
@@ -64,6 +67,10 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers'
+end
+
+group :doc do
+  # gem 'sdoc', require: false
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
