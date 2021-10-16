@@ -66,7 +66,8 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/0F767
 
 ## Screen Transition Diagram
 
-![Transition diagram](https://user-images.githubusercontent.com/78650220/137585962-6ffe00df-5065-4922-b6fb-f2e0cafb3efb.png)
+![Transition diagram](https://user-images.githubusercontent.com/78650220/137589588-7c6a7bcb-4665-4476-8bb0-50cf1c745a9b.png)
+
 
 
 
