@@ -16,7 +16,6 @@ Things you may want to cover:
 ## Technologies ouside the curriculum
 
 * Cloudinary
-
 * Simple_form
 
 ## Execution Procedure
@@ -66,7 +65,8 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/0F767
 
 ## Screen Transition Diagram
 
-![Transition diagram](https://user-images.githubusercontent.com/78650220/137599998-3e05f0bc-d49c-4d15-80a9-562d0a22a645.png)
+![Transition diagram](https://user-images.githubusercontent.com/78650220/137620404-2af06d58-702d-4343-91fc-98db6d5f3be4.png)
+
 
 
 https://cacoo.com/diagrams/82Q17WpL46ib93Q7/B4CB9
