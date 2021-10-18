@@ -11,6 +11,8 @@ ruby '2.6.5'
 #Administration & Authentication
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.8'
+gem 'rails_admin'
+gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.1'
 gem 'cancancan', '~> 3.3'
 gem 'mail_form', '~> 1.9'
@@ -60,6 +62,7 @@ end
 group :development do
  gem 'web-console', '>= 3.3.0'
  gem 'listen', '>= 3.0.5', '< 3.2'
+ gem 'letter_opener_web'
 #  gem 'spring'
  gem 'spring-watcher-listen', '~> 2.0.0'
 end

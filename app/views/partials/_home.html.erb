@@ -1,0 +1,31 @@
+<header class="p-2 bg-primary text-white fixed-top ">
+    <div class="container-fluid row d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+     
+        <div class="col-3">
+            <a href="/" class="navbar-brand mb-2 mb-lg-0 text-white"><span class="fb">OnlineEstateAgency | Home </span></a>
+        </div>
+        
+        <div class=" col-9">
+            <% if user_signed_in? %> 
+              <div class="row">
+                <div class="col-8 ">
+                  <div class="form-group d-flex justify-content-center mb-2 mb-lg-0 ">
+                    <a href="<%=  %>" class="btn btn-warning me-5 ml-5" role="button">Properties</a>
+                    <a href="<%=  %>" class="btn btn-success me-5 " role="button">Appointments</a>
+                    <a href="<%= rails_admin_path %>" class="btn btn-info ml-2 " role="button">Management</a>
+                  </div>  
+                </div>
+                <div class=" col-4  text-end text-decoration-none">
+                  <%= link_to "Profile", profil_path, class:"btn btn-success me-2" %>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
+                </div> 
+            <% else %>
+              <div class="col-12 text-end text-decoration-none">
+                <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button">Login</a>
+                <a class="btn btn-warning" href="<%= new_user_registration_path %>" role="button">Sign Up</a>
+              </div> 
+              </div>
+            <% end %>
+        </div> 
+    </div>
+</header>

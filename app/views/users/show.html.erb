@@ -1,0 +1,15 @@
+
+<div class="d-flex flex-row justify-content-center align-items-center container mt-2">
+    <div class="">
+        <h1 >My account details</h1> <br>
+        <p><strong>Username: </strong><%= @user.username%></p>
+        <p><strong>Lastname: </strong><%= @user.lastname%></p>
+        <p><strong>Firstname: </strong><%= @user.firstname%></p>
+        <p><strong>Profession: </strong><%= @user.profession%></p>
+        <p><strong>Contact: </strong><%= @user.contact%></p>
+        <p><strong>Address: </strong><%= @user.address%></p>
+        <p><strong>Email: </strong><%= @user.email%></p>
+        <%= link_to 'Edit', edit_user_registration_path, class: "btn btn-warning" %> |
+        <%= link_to 'Back', root_path, class: "btn btn-success"%>
+    </div>
+</div>
