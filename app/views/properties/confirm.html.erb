@@ -1,0 +1,29 @@
+<%= form_with(model: @property, local: true, url: propertiespath) do |f| %>  
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <h2> Ecran de confirmation</h2><br>
+        <%= image_tag(@property.illustration.url) if @property.illustration && @property.illustration.url %>
+        <div class="mt-4"> <strong>Description:</strong> <%= @property.description %></div>
+        <%= f.hidden_field :illustration_cache %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :price %>
+        <%= f.hidden_field :status %>
+        <%= f.hidden_field :type_of_property %>
+        <%= f.hidden_field :description %>
+        <button class="btn btn-success m-2" type="submit"> Confirm</button>
+    </div>
+<% end %>
+<div>
+    <%= form_with(model:@property, url:new_property_path, local:true, method:"get") do |f| %>
+       <%= f.hidden_field :illustration_cache %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :address %>
+        <%= f.hidden_field :price %>
+        <%= f.hidden_field :status %>
+        <%= f.hidden_field :type_of_property %>
+        <%= f.hidden_field :description %>
+        <button class="btn btn-danger mb-5 w-100" type="submit" name ="back">Annuler</button>
+    <% end %>      
+</div><br><br><br><br>
+
+

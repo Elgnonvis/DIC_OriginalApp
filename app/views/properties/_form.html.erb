@@ -1,0 +1,39 @@
+
+<%= simple_form_for(@property) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <div class="form-group mt-3 mb-3">
+        <%= f.label :type_of_property %>
+        <%= f.select :type_of_property, ['House','Villa', 'Duplex', 'Bureau', 'Boutique', 'Studio'], id: "type_of_property" %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+        <%= f.label :status %>
+        <%= f.select :status, ['Occupied','Vaccant'], id: "status", class: 'form-control' %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :name %>
+    </div>
+    <div class="form-group mt-3 mb-3">
+      <%= f.input :description %>
+    </div>      
+
+    <div class="form-group mt-3 mb-3">
+      <%= image_tag(@property.illustration.url) if @property.illustration && @property.illustration.url %>
+      <%= f.input :illustration, as: :file %> <br>
+      <%= f.hidden_field :illustration_cache %>
+    </div>
+
+    <div class="form-group mt-3 mb-3">
+       <%= f.input :address %>
+    </div>
+     <div class="form-group mt-3 mb-3">
+      <%= f.input :price %> FCFA
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class:"btn btn-success mb-5"  %>
+  </div>
+<% end %>
