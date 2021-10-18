@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  
 
+  root 'home#index'
   devise_for :users
+  get '/profil', to: 'users#show', as: :profil
+  resources :users, only: [:show]
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
