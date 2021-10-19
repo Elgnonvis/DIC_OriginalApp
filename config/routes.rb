@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'comments/create'
+  get 'comments/index'
   resources :properties
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
