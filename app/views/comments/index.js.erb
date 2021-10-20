@@ -1,3 +1,4 @@
 $("#comments_area").html("<%= j(render 'comments/index', { comments: @comment.property.comments, property: @comment.property }) %>");
 $("textarea").val('');
 $("#notice").html("<%= j flash[:notice] %>");
+

@@ -38,3 +38,20 @@
   <%= @property.user.username %>
 </p>
 
+
+      <hr />
+  <p>List of comments </p>
+  <!-- Get the HTML id of this comments_area and update only that part of the div-->
+  <div id="comments_area">
+    <!-- Render to display a list of posted comments on the property details page -->
+    <%= render partial: 'comments/index', locals: { comments: @comments, property: @property, user: @user } %>
+  </div>
+  <!-- Render to display the comment input field on the detail page of the property -->
+  <%= render partial: 'comments/form', locals: { comment: @comment, property: @property } %>
+
+  <% if @property.user == current_user %>
+    <a class="btn btn-danger w-25 m-4" href = "<%= edit_property_path(@property)%>">Edit</a> 
+  <% end %>|
+<%= link_to 'Back', properties_path %>
+
+</div> <br> <br><br>

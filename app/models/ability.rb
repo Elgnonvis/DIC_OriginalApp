@@ -8,6 +8,8 @@ class Ability
     if user.try(:is_admin?)
       can :access, :rails_admin
       can :manage, :all
+    else
+      can :read, :all
     end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?

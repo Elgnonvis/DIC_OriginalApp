@@ -1,19 +1,23 @@
 class CommentsController < ApplicationController
   before_action :set_property, only: [:create, :edit, :update]
-
+  # before_action :set_comment, only: [:edit, :update]
+  
   def create
-
+    @comments = Comment.where(property_id: @property).order("created_at DESC")
     # Search Property from the parameter value and build it as comments associated with Property.
-    
     @comment = @property.comments.build(comment_params)
     @comment.user_id = current_user.id
     
     # Change format according to client request
     respond_to do |format|
       if @comment.save
+        flash[:succes] = 'Comment was successfully posted.'
         format.html { redirect_to property_path(@property) }
+        format.js { render :index }
+        # format.json { render :show, status: :created, location: [@servicerequest, @upload] }
       else
-        format.html { redirect_to property_path(@property), notice: 'Could not post...' }
+        flash[:danger] = 'Could not post...'
+        format.html { redirect_to property_path(@property) }
       end
     end
   end
@@ -41,21 +45,32 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    @comments = Comment.where(property_id: @property).order("created_at DESC")
     @comment.destroy
     respond_to do |format|
-      flash.now[:notice] = 'Comment deleted'
+      #flash[:danger] = 'Comment was successfully destroyed.'
+      format.html { redirect_to property_path(@property) }
       format.js { render :index }
     end
+    # @comment = Comment.find(params[:id])
+    # @comment.destroy
+    # respond_to do |format|
+    #   flash.now[:notice] = 'Comment deleted'
+    #   format.js { render :index }
+    # end
   end
   
 
   private
   # Strong parameters
   def comment_params
-    params.require(:comment).permit(:property_id, :user_id,:content)
+    params.require(:comment).permit(:property_id, :user_id, :content)
   end
   def set_property
     @property = Property.find(params[:property_id])
   end
+  # def set_comment
+  #   @comment = @property.comments.find(params[:id])
+  # end
 
 end

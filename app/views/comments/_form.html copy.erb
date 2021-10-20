@@ -4,13 +4,12 @@
 
   <div class="form-inputs">
     <%= f.input :content,
-                  autofocus: true %>
+                  autofocus: true ,
+                  id: "comment_content_#{property.id}" %>
+    <%= f.text_area :content %>
   </div>
 
-  <div class="form-actions", style="padding-top:20px; padding-bottom:20px;">
-      <%= button_to ( f.object.new_record? ? "Create Comment" : "Update Comment"), property_comments_path(property_id: @property), remote: true,
-       class: 'btn btn-primary'  %>
-    </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
 <% end %>
-
-

@@ -1,0 +1,16 @@
+<ul>
+  <% comments.each do |comment| %>
+    <% if comment.id.present? %>
+      <li>
+        <p>Content: <%= comment.content.html_safe %></p>
+        <p>Posted by: <%= comment.user.username %></p>
+        <p><%= time_ago_in_words(comment.created_at) %></p>
+
+        
+          <p><%= link_to "Edit comment", edit_property_comment_path(property, comment), remote: true %></p>
+          <p><%= link_to "Delete comment", property_comment_path(comment.property_id, comment.id), method: :delete, remote: true, data: { confirm: "Do you really want to delete this?"} %></p>
+       
+      </li>
+    <% end %>
+  <% end %>
+</ul>

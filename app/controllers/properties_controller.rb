@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   # GET /properties or /properties.json
   def index
     @properties = current_user.properties.order(created_at: :desc).page(params[:page]).includes(:user)
-    # @properties = Property.all
+    @properties = Property.all.page(params[:page])
   end
 
   # GET /properties/1 or /properties/1.json

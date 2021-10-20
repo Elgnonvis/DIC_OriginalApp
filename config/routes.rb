@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'comments/create'
-  get 'comments/index'
-  resources :properties
+  resources :properties do
+    resources :comments
+  end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
   devise_for :users
