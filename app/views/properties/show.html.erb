@@ -2,7 +2,7 @@
 
       <div class="d-flex flex-column justify-content-center align-itmes-center card text-center" style=""> <br>
         <div class="card-img-top">
-            <%= image_tag(@property.illustration.url) if @property.illustration.url%>
+            <%= image_tag(@property.illustration.url, :alt => @property.name) if @property.illustration.url%>
         </div>
         <div class="card-body">
             <p class="card-text text-justify"><%= @property.description %></p>
@@ -23,8 +23,7 @@
 
 <% if @property.user == current_user %>
     <a class="btn btn-danger w-25 m-4" href = "<%= edit_property_path(@property)%>">Edit</a> 
-  <% end %>|
-<%= link_to 'Back', properties_path %>
+  <% end %>
 
       <hr />
   <p>List of comments </p>

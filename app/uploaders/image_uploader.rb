@@ -1,27 +1,27 @@
 class ImageUploader < CarrierWave::Uploader::Base
-  # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
- include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
+  include Cloudinary::CarrierWave
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
-  version :profile_size do
-    process resize_to_fill: [500, 500]
-   end
-  
-  version :tiny do
-    process resize_to_fill: [50, 50]
-   end
+  process :convert => 'png'
+  process :tags => ['post_picture']
 
+  version :standard do
+    process :resize_to_fill => [100, 150, :north]
+  end
+
+  version :thumbnail do
+    resize_to_fit(50, 50)
+  end
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+  def public_id
+    return model.name
+  end 
 
-  process resize_to_fill: [200, 300]
-  
-  def extension_allowlist
-     %w(jpg jpeg png)
+  # Only files with extension jpg jpeg, gif and png will be uploaded
+  def extension_whitelist
+    %w[jpg jpeg gif png]
   end
 
 end
