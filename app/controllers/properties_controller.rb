@@ -3,8 +3,24 @@ class PropertiesController < ApplicationController
 
   # GET /properties or /properties.json
   def index
-    @properties = current_user.properties.order(created_at: :desc).page(params[:page]).includes(:user)
-    @properties = Property.all.page(params[:page])
+    # @properties = current_user.properties.order(created_at: :desc).page(params[:page]).includes(:user)
+    @properties = Property.order(created_at: :desc).page(params[:page])
+    @properties = Property.order(type_of_property: :asc).page(params[:page]).includes(:user) if params[:sort_type]
+    @properties = Property.order(status: :asc).page(params[:page]).includes(:user) if params[:sort_status]
+
+
+    if params[:type_of_property].present?
+			if params[:status].present? 
+				@properties = Property.type_of_property_search(params[:type_of_property]).status_search(params[:status]).page params[:page]
+			else
+				@properties = Property.type_of_property_search(params[:type_of_property]).page(params[:page])
+			end
+		else
+      if params[:status].present?
+			  @properties = Property.status_search(params[:status]).page(params[:page])
+      end
+		end
+
   end
 
   # GET /properties/1 or /properties/1.json

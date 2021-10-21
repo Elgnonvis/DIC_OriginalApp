@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :appointments do
+    collection do
+    get 'me'
+    end
+  end
   resources :properties do
     resources :comments
   end

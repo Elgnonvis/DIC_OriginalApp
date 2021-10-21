@@ -1,0 +1,25 @@
+<div class="w-100 d-flex flex-column container justify-content-center align-itmes-center" style = "padding-top: 1rem; border: 1px solid;">
+
+<p>
+  <strong>Description:</strong>
+  <%= @appointment.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @appointment.status %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @appointment.date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @appointment.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>
+</div>

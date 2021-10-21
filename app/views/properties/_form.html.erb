@@ -5,10 +5,10 @@
 
   <div class="form-inputs">
     <div class="form-group mt-3 mb-3">
-        <%= f.input :type_of_property, collection:{House: :H, Villa: :V, Duplex: :D, Offfice: :O, Shop: :S, Studio: :T}, include_blank: false, id: "type_of_property" %>
+      <%= f.input :type_of_property, :collection => ["House", "Villa", "Duplex", "Office", "Shop", "Studio"],:input_html => { :class => 'form-control'}, id: "type_of_property", include_blank: false %>
     </div>
     <div class="form-group mt-3 mb-3">
-        <%= f.input :status, collection:{Occupied: :O, Vaccant: :V}, include_blank: false, id: "status" %>
+      <%= f.input :status, :collection => ["Occupied", "Vaccant"],:input_html => { :class => 'form-control'}, id: "status", include_blank: false %>
     </div>
     <div class="form-group mt-3 mb-3">
       <%= f.input :name %>
@@ -17,17 +17,17 @@
       <%= f.input :description %>
     </div>      
 
-    <div class="form-group mt-3 mb-3">
+    <div class="form-group mt-3 ">
       <%= image_tag(@property.illustration.url) if @property.illustration && @property.illustration.url %>
       <%= f.input :illustration, as: :file, wrapper: :horizontal_file %> <br>
       <%= f.hidden_field :illustration_cache %>
     </div>
 
-    <div class="form-group mt-3 mb-3">
+    <div class="form-group mb-3">
        <%= f.input :address %>
     </div>
      <div class="form-group mt-3 mb-3">
-      <%= f.input :price %> FCFA
+      <%= f.input :price %>
     </div>
   </div>
 
