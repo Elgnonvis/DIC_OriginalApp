@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-  before_action :set_property, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /properties or /properties.json
   def index
@@ -80,9 +80,9 @@ class PropertiesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_property
-      @property = Property.find(params[:id])
-    end
+    # def set_property
+    #   @property = Property.find(params[:id])
+    # end
 
     # Only allow a list of trusted parameters through.
     def property_params
