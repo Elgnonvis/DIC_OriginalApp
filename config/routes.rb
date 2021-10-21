@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :properties do
     resources :comments
+    resources :images
   end
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'

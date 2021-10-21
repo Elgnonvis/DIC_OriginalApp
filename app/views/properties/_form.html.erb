@@ -15,13 +15,7 @@
     </div>
     <div class="form-group mt-3 mb-3">
       <%= f.input :description %>
-    </div>      
-
-    <div class="form-group mt-3 ">
-      <%= image_tag(@property.illustration.url) if @property.illustration && @property.illustration.url %>
-      <%= f.input :illustration, as: :file, wrapper: :horizontal_file %> <br>
-      <%= f.hidden_field :illustration_cache %>
-    </div>
+    </div> 
 
     <div class="form-group mb-3">
        <%= f.input :address %>
@@ -30,6 +24,19 @@
       <%= f.input :price %>
     </div>
   </div>
+
+   <hr />
+  
+  <%= f.fields_for :post_attachments do |p| %>
+    <div class="form-group mt-3 mb-3">
+      <%= p.file_field :illustration, :multiple => true, name: "images[illustration][]" , :class => 'form-control'%>
+
+      <%= p.hidden_field :illustration_cache %>
+      <%= p.input :title %>
+    </div>
+    
+  <% end %>
+
 
   <div class="form-actions">
     <%= f.button :submit, class:"btn btn-success mb-5"  %>

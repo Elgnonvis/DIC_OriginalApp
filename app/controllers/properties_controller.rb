@@ -27,15 +27,20 @@ class PropertiesController < ApplicationController
   def show
     @comments = @property.comments
     @comment = @property.comments.build
+    @images = @property.images.all
   end
 
   # GET /properties/new
   def new
     @property = Property.new
+    @image = @property.images.build
+    # @property.images.build
+    
   end
 
   # GET /properties/1/edit
   def edit
+    @images = @property.images.build
   end
 
   # POST /properties or /properties.json
@@ -44,14 +49,18 @@ class PropertiesController < ApplicationController
     @property = current_user.properties.build(property_params)
     respond_to do |format|
       if @property.save
-        flash[:success] = "Property was successfully created."
-        format.html { redirect_to @property }
-        format.js { render :index }
+        params[:images]['illustration'].each do |a|
+            @image = @property.images.create!(:illustration => a, :property_id => @property.id, :title => @title)
+        end
+          flash[:success] = "Property was successfully created."
+          format.html { redirect_to @property }
+          format.js { render :index }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.js { render :index }
       end
     end
+
   end
 
   # PATCH/PUT /properties/1 or /properties/1.json
@@ -86,6 +95,6 @@ class PropertiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def property_params
-      params.require(:property).permit(:name, :type_of_property, :description, :illustration, :illustration_cache,:address, :price, :status)
+      params.require(:property).permit(:name, :type_of_property, :description, :address, :price, :status, images_attributes:[:id, :property_id ,:illustration, :illustration_cache, :title])
     end
 end

@@ -2,7 +2,6 @@
 
       <div class="d-flex flex-column justify-content-center align-itmes-center card text-center" style=""> <br>
         <div class="card-img-top">
-            <%= image_tag(@property.illustration.url, :alt => @property.name) if @property.illustration.url%>
         </div>
         <div class="card-body">
             <p class="card-text text-justify"><%= @property.description %></p>
@@ -14,16 +13,23 @@
         </blockquote>
       </div>
 
+      <hr />
+
+<% @images.each do |p| %>
+  <div>
+  <strong>Image :</strong>
+  <a href="<%= property_url(@property) %>"><%= image_tag(p.illustration_url)%></a>
+  <!--  -->
+
+  </div>
+<% end %>
+
       <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
         <% if @property.user == current_user %>
             <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>">Modifier</a> 
         <% end %>
             <a class="btn btn-primary w-25 m-4" href = "<%= properties_path %>"> Properties</a>        
       </div>
-
-<% if @property.user == current_user %>
-    <a class="btn btn-danger w-25 m-4" href = "<%= edit_property_path(@property)%>">Edit</a> 
-  <% end %>
 
       <hr />
   <p>List of comments </p>

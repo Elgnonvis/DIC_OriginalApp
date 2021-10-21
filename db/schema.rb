@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_224119) do
+ActiveRecord::Schema.define(version: 2021_10_21_112345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,19 @@ ActiveRecord::Schema.define(version: 2021_10_20_224119) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.string "illustration"
+    t.bigint "property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.index ["property_id"], name: "index_images_on_property_id"
+  end
+
   create_table "properties", force: :cascade do |t|
     t.string "name", null: false
     t.string "type_of_property", default: "House"
     t.string "description", null: false
-    t.string "illustration"
     t.string "address", null: false
     t.string "status", default: "Occupied"
     t.bigint "user_id"
@@ -77,5 +85,6 @@ ActiveRecord::Schema.define(version: 2021_10_20_224119) do
   add_foreign_key "appointments", "users"
   add_foreign_key "comments", "properties"
   add_foreign_key "comments", "users"
+  add_foreign_key "images", "properties"
   add_foreign_key "properties", "users"
 end
