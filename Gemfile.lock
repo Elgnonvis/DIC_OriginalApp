@@ -104,6 +104,8 @@ GEM
     devise-bootstrap-views (1.1.0)
     devise-i18n (1.10.0)
       devise (>= 4.8.0)
+    devise-specs (0.0.5)
+      devise (~> 4.8)
     diff-lcs (1.4.4)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -365,6 +367,7 @@ DEPENDENCIES
   devise (~> 4.8)
   devise-bootstrap-views (~> 1.1)
   devise-i18n
+  devise-specs
   dotenv-rails (~> 2.7, >= 2.7.6)
   factory_bot_rails
   faker

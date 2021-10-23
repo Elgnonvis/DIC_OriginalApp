@@ -3,41 +3,33 @@
   <strong>Illustration:</strong>
   <%= @property.illustration %>
 </p>
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+<p><strong>Name:</strong><%= @property.name %></p>
 
-<p>
-  <strong>Type of property:</strong>
-  <%= @property.type_of_property %>
-</p>
+<p><strong>Type of property:</strong><%= @property.type_of_property %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
+<p><strong>Description:</strong><%= @property.description %></p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+<p><strong>Address:</strong><%= @property.address %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %> FCFA
-</p>
+<p><strong>Price:</strong><%= @property.price %> FCFA</p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @property.status %>
-</p>
+<p><strong>Status:</strong><%= @property.status %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @property.user.username %>
-</p>
+<p><strong>User:</strong><%= @property.user.username %></p>
 
+<div class="card-img-top">
+      
+     <%= @property.images.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
+    <%= @property.images.each do |image| %>
+      <%= image_tag(image) %>
+    <% end %>
+    
+    </div>
+    <%= (0...@property.images.count).each do |image| %>
+      <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
+    <% end %>
 
       <hr />
   <p>List of comments </p>

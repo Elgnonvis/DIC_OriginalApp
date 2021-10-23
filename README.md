@@ -74,3 +74,9 @@ https://cacoo.com/diagrams/82Q17WpL46ib93Q7/B4CB9
 ## Wireframes
 
 https://cacoo.com/diagrams/82Q17WpL46ib93Q7/701FA
+
+
+
+
+
+bundle config set --local path 'vendor/bundle'

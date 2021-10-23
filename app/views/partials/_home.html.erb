@@ -16,6 +16,8 @@
                   </div>  
                 </div>
                 <div class=" col-4  text-end text-decoration-none">
+                <a class ="btn btn-success" href="<%= contact_path %>" role="button">Contact_us</a>
+
                   <%= link_to "Profile", profil_path, class:"btn btn-success me-2" %>
                   <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
                 </div> 
@@ -23,6 +25,8 @@
               <div class="col-12 text-end text-decoration-none">
                 <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button">Login</a>
                 <a class="btn btn-warning" href="<%= new_user_registration_path %>" role="button">Sign Up</a>
+                <a class ="btn btn-success" href="<%= contact_path %>" role="button">Contact_us</a>
+                
               </div> 
               </div>
             <% end %>

@@ -1,51 +1,51 @@
-<div class="d-flex flex-column container justify-content-center align-itmes-center" style = "padding-top: 1rem;">
+<div class="d-flex flex-column justify-content-center align-itmes-center card text-center" style=""> <br>
 
-      <div class="d-flex flex-column justify-content-center align-itmes-center card text-center" style=""> <br>
-        <div class="card-img-top">
-        </div>
-        <div class="card-body">
-            <p class="card-text text-justify"><%= @property.description %></p>
-        </div><br>
-        <blockquote class="blockquote mb-0">
-          <footer class="blockquote-footer">
-            Posté par : <cite title="Source Title"><%= @property.user.username %></cite>
-          </footer> 
-        </blockquote>
-      </div>
+  <div class="card-body">
+    <div class="card-img-top">
+      <%= (0...@property.images.count).each do |image| %>
+      <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
+    <% end %>
+     
+    </div>
+    <p><strong>Name:  </strong><%= @property.name %></p>
+    <p><strong>Type of property:  </strong><%= @property.type_of_property %></p>
 
-      <hr />
+    <p><strong>Description:  </strong><%= @property.description %></p>
 
-<% @images.each do |p| %>
-  <div>
-  <strong>Image :</strong>
-  <a href="<%= property_url(@property) %>"><%= image_tag(p.illustration_url)%></a>
-  <!--  -->
+    <p><strong>Address:  </strong><%= @property.address %></p>
 
+    <p><strong>Price:  </strong><%= @property.price %> FCFA</p>
+
+    <p><strong>Status:  </strong><%= @property.status %></p>
+
+  </div><br>
+    <blockquote class="blockquote mb-0">
+      <footer class="blockquote-footer">
+        Posté par : <cite title="Source Title"><%= @property.user.username %></cite>
+      </footer> 
+    </blockquote>
   </div>
-<% end %>
 
-      <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
-        <% if @property.user == current_user %>
-            <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>">Modifier</a> 
-        <% end %>
-            <a class="btn btn-primary w-25 m-4" href = "<%= properties_path %>"> Properties</a>        
-      </div>
+  <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
+    <% if @property.user == current_user %>
+        <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>">Modifier</a> 
+    <% end %>
+        <a class="btn btn-primary w-25 m-4" href = "<%= properties_path %>"> Properties</a>        
+  </div>
 
       <hr />
   <p>List of comments </p>
 
-<div class="feed-activity-list">
-  <div id="" class="">
-  <p id="notice"><%= notice %></p>
-  <!-- Render to display the comment input field on the detail page of the property -->
-    <%= render partial: 'comments/form', locals: { comment: @comment, property: @property } %>
-  </div>
+  <div class="feed-activity-list">
+    <div id="" class="">
+    <p id="notice"><%= notice %></p>
+    <!-- Render to display the comment input field on the detail page of the property -->
+      <%= render partial: 'comments/form', locals: { comment: @comment, property: @property } %>
+    </div>
 
-  <!-- Get the HTML id of this comments_area and update only that part of the div-->
-  <div id="comments_area" class="">
-    <!-- Render to display a list of posted comments on the property details page -->
-    <%= render partial: 'comments/index', locals: { comments: @comments, property: @property, user: @user } %>
+    <!-- Get the HTML id of this comments_area and update only that part of the div-->
+    <div id="comments_area" class="">
+      <!-- Render to display a list of posted comments on the property details page -->
+      <%= render partial: 'comments/index', locals: { comments: @comments, property: @property, user: @user } %>
   </div>
-</div>  
-
-</div> <br> <br><br>
+</div><br> <br><br>

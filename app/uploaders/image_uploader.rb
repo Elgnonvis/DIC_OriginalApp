@@ -16,7 +16,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
   def public_id
-    return model.title
+    return model.name
   end 
 
   # Only files with extension jpg jpeg, gif and png will be uploaded

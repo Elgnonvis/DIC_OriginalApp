@@ -11,7 +11,7 @@ class Ability
 
     
     if user.id
-      can [:crud], [Appointment, Property, Comment], {user_id: user.id}
+      can [:crud, :me], [Appointment, Property, Comment], {user_id: user.id}
     end
     
     if user.try(:is_admin?)

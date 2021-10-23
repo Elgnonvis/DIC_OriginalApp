@@ -13,7 +13,7 @@ module OnlineEstateAgency
     config.time_zone = 'Africa/Porto-Novo'
     config.active_record.default_timezone = :local
     config.i18n.available_locales = [:fr, :en]
-    config.i18n.default_locale = :fr
+    config.i18n.default_locale = :en
 
     config.generators do |g|
       g.test_framework :rspec,

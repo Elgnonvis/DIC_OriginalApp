@@ -1,35 +1,26 @@
+#bundle exec rspec spec/models/comment_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
     before do
-    
-    user = create :user
+      user = create :user
+      visit new_user_session_path
 
-    visit new_user_session_path
+      fill_in 'Login', with: user.email
+      fill_in 'Password', with: user.password
+      click_button 'Log in'
 
-    fill_in 'Email', with: user.email
-    fill_in 'Password', with: user.password
-    click_button 'Log in'
+      user= User.last
 
-    user= User.last
-
-    @post = FactoryBot.create(:post, name: 'Diver', content: 'Liste des diplômés', attachment: 'Document', user_id: user.id )
-
+      @property = FactoryBot.create(:property, name: 'Diver', description: 'Notre chez', address: 'Parakou', user_id: user.id )
     end
 
-  describe 'Nouvelle fonction de création' do
-    context "Lors de la création d'un nouveau commentaire" do
-      it "Le commentaire créé s'affiche" do
-       
-      end
-    end
-  end
+  
   describe "Fonction d'affichage de liste" do
     context "Lors de la transition vers l'écran de liste" do
       it "Une liste des commentaires créées s'affiche" do
         visit properties_path
         click_on "Show"
-
         user= User.last
         comment = FactoryBot.create(:comment, content: 'Commentaire du post', user_id: user.id , property_id: @property.id)
         #sleep 2
@@ -47,7 +38,7 @@ RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
         comment = FactoryBot.create(:comment, content: 'Commentaire du post', user_id: user.id , property_id: @property.id)
         click_on "Create Comment"
         sleep 2
-        click_on "Edit comment"
+        click_on "Edit"
         expect(page).to have_content 'Editing comment'
        end
      end
@@ -62,7 +53,7 @@ RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
         expect(Comment.count).to eq(1)
 
         accept_alert do
-            click_link 'Delete comment'
+            click_link 'Delete'
           end
 
         comment.reload

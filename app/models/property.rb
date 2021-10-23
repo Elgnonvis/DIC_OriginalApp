@@ -1,9 +1,10 @@
 class Property < ApplicationRecord
+  mount_uploaders :images, ImageUploader
   paginates_per 5
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :comments, dependent: :destroy
-  has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
+  has_many_attached :images
+  #accepts_nested_attributes_for :images, reject_if: :all_blank, allow_destroy: true
   validates :name, presence:true, length: {minimum:1, maximum:30}
   validates :description, presence: true
   validates :price, presence: true

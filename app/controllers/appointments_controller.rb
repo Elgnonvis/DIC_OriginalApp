@@ -7,13 +7,7 @@ load_and_authorize_resource
   end
 
   def me
-    # @tasks = current_user.tasks.order(created_at: :desc).page(params[:page]).includes(:user)
-    # @tasks = current_user.tasks.order(deadline: :desc).page(params[:page]) if params[:sort_expired]
-    # @tasks = current_user.tasks.order(priority: :asc).page(params[:page]) if params[:sort_priority]
-
     @appointments = current_user.appointments.order(created_at: :desc).page(params[:page]).includes(:user)
-    # @appointments = current_user.appointments.order(status: :asc).page(params[:page]).includes(:user) if params[:sort_expired]
-
     render :index
   end
 
