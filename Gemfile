@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 # Core
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails', '5.2.5'
-gem 'rake', '~> 13.0', '>= 13.0.6'
+# gem 'rake', '~> 13.0', '>= 13.0.6'
 # ruby '2.6.5'
 
 
@@ -27,7 +27,7 @@ gem 'carrierwave', '~> 2.0'
 # Middleware
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
-gem 'unicorn'
+# gem 'unicorn'
 
 # Frontend
 gem 'kaminari'
