@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root 'home#index'
+  resources :appointments do
+    collection do
+    get 'me'
+    end
+  end
+  resources :properties do
+    resources :comments
+  end
+  get 'contact' => 'home#contact'
+  resources :home, only: [:index, :new, :create]
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  
   devise_for :users
   get '/profil', to: 'users#show', as: :profil
   resources :users, only: [:show]

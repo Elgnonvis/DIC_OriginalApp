@@ -1,0 +1,63 @@
+<div class="container text-center">
+  <h1>Properties List</h1>
+  <div class="d-flex mt-5">   
+      <div class=" me-2">
+        <a href = "<%= properties_path(sort_type: "true") %>" class="btn btn-primary me-2">Sort by Property type</a>
+        <a href = "<%= properties_path(sort_status: "true") %>" class="btn btn-primary me-3">Sort by Property status </a>
+      </div>
+ 
+      <div class="form-group d-flex justify-content-center mb-3 w-50">
+        <%= form_with url: properties_path, method: :get, local: true, class:"form d-flex justify-content-between w-100" do |f| %>
+          <%= f.label :type_of_property, class:"mt-2 w-100 me-1" %>
+          <%= f.select( :type_of_property, ["House", "Villa", "Duplex", "Office", "Shop", "Studio"], {include_blank: true}, {class: "form-select me-2 w-75"}) %>
+
+          <%= f.label :status, class:"me-1 mt-2 w-50" %>
+          <%= f.select( :status, ["Occupied", "Vaccant"], {include_blank: true}, {class: "form-select me- w-75"}) %>
+          <%= f.submit "Search", name: nil, data: { disable_with: false }, class: "btn btn-outline-success" %>
+        <% end %>
+      </div>
+    </div>
+
+  <div class ='table-responsive'>
+     <div class=" text-end mb-2">
+        <a href = "<%= new_property_path  %>" class="btn btn-primary">New Property </a>
+      </div>
+    <table class = "table table-striped table-hover border" >
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type of property</th>
+          <th>Description</th>
+          <th>Address</th>
+          <th>Price</th>
+          <th>Status</th>
+          <th>Posted by</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @properties.each do |property| %>
+          <tr>
+            <td class="property_row"><%= property.name %></td>
+            <td class="type_of_property_row"><%= property.type_of_property %></td>
+            <td><%= truncate(property.description , length: 20) %></td>
+            <td><%= truncate(property.address, length: 15) %></td>
+            <td><%= property.price %></td>
+            <td class="status_row"><%= property.status %></td>
+            <td><%= property.user.username %></td>
+            <td>
+              <a href = "<%= property_path(property.id) %>" class="btn btn-primary">Show</a>
+              <a href = "<%= edit_property_path(property) %>" class="btn btn-warning">Edit</a>
+              <a href = "<%= property_path(property.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE">Destroy</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="container pagination justify-content-center" >
+      <%= paginate @properties, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
+  </div>
+</div> <br><br><br>
+    

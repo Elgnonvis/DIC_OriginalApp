@@ -1,0 +1,25 @@
+<div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+    <%= image_tag(@image.picture.url) if @image.picture && @image.picture.url %>
+    
+    <%= form.hidden_field :image_cache %>
+</div>
+<div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+</div>
+<div class="form-group mt-3 ">
+      <%= image_tag(@property.illustration.url) if @property.illustration && @property.illustration.url %>
+      <%= f.input :illustration, as: :file, wrapper: :horizontal_file %> <br>
+      <%= f.hidden_field :illustration_cache %>
+    </div>
+
+    <%= f.fields_for :post_attachments do |p| %>
+    <div class="field">
+      <%= p.label :illustration %><br>
+      <%= p.file_field :illustration, :multiple => true, name:     "images[illustration][]" %>
+    </div>
+  <% end %>
+
+      <%= p.file_field :illustration, :multiple => true, name:     "images[illustration][]" %>

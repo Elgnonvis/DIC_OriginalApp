@@ -10,10 +10,14 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password, :password_confirmation])
         devise_parameter_sanitizer.permit(:account_update, keys: [:username, :lastname, :firstname, :profession, :contact, :address])
       end
+      rescue_from CanCan::AccessDenied do |exception|
+        redirect_to new_user_session_path, notify:'Accès interdit'
+      end
       
       # def set_locale
       #   I18n.locale = params[:locale] || I18n.default.locale
       # end
+
   
       def switch_locale(&action)
         locale = params[:locale] || I18n.default_locale

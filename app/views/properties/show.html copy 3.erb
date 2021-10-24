@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Illustration:</strong>
+  <%= @property.illustration %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @property.name %>
+</p>
+
+<p>
+  <strong>Type of property:</strong>
+  <%= @property.type_of_property %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @property.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @property.price %> FCFA
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @property.status %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @property.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
+<%= f.input :address, as: :string, input_html: {class: 'form-datepicker'} %>
+ <% if @comment.user == current_user %>
+          <p><%= link_to "Edit comment", edit_property_comment_path(property, comment), remote: true %></p>
+          <p><%= link_to "Delete comment", property_comment_path(comment.property_id, comment.id), method: :delete, remote: true, data: { confirm: "Do you really want to delete this?"} %></p>
+        <% end %>
