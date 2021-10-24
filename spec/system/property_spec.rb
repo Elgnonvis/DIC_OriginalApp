@@ -10,7 +10,7 @@ RSpec.describe 'Property management function', type: :system do
     fill_in 'user_password', with: 'password' 
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
-
+    # user= User.last
     # Fill_in 'User_user_name', With: 'JOHN' 
     # Fill_in 'user_email', With: 'doe@fil.com ' 
     # Fill_in 'User_password', With: 'password' 
@@ -40,7 +40,7 @@ RSpec.describe 'Property management function', type: :system do
          #date = DateTime.now.to_date
          #@property = FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
          #@property = FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
-   
+         user= User.last
          property = FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
          #Transition to property list page
          visit properties_path
@@ -58,15 +58,11 @@ RSpec.describe 'Property management function', type: :system do
     context 'When transitioning to the list screen' do
       it 'The created property list is displayed' do
 
-        # visit new_user_session_path
-        # fill_in "Login",	with: "doe@fil.com" 
-        # fill_in "Password",	with: "password" 
-        # click_on("Log in")
-
         visit new_property_path
         fill_in 'property[name]', with: "Maison de rêve"
-        fill_in 'property[address]', with: "Azovè"
         fill_in 'property[description]', with: "A côté de la plage"
+        fill_in 'property[address]', with: "Azovè"
+        fill_in 'property[price]', with: "25000"
         click_on 'Create Property'
         expect(page).to have_content 'Maison de rêve'
       end
@@ -80,6 +76,7 @@ RSpec.describe 'Property management function', type: :system do
         #   fill_in "Login",	with: "doe@fil.com" 
         #   fill_in "Password",	with: "password" 
         #   click_on("Log in")
+          user= User.last
           property = FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
           visit property_path(property.id)
           expect(page).to have_content 'Presidence'
@@ -93,9 +90,10 @@ RSpec.describe 'Property management function', type: :system do
     #   fill_in "Login",	with: "doe@fil.com" 
     #   fill_in "Password",	with: "password" 
     #   click_on("Log in")
-      FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
-      FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
-      FactoryBot.create(:property, name: 'Elysée', description: 'Appartement moderne', type_of_property: 'Duplex', status: 'Vaccant', address: 'Parakou', user_id: user.id )
+      user= User.last
+      property = FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
+      property = FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
+      property = FactoryBot.create(:property, name: 'Elysée', description: 'Appartement moderne', type_of_property: 'Duplex', status: 'Vaccant', address: 'Parakou', user_id: user.id )
       visit properties_path
       properties = all('.property_row')
       expect(properties[0]).to have_content 'Elysée'
@@ -111,14 +109,16 @@ RSpec.describe 'Property management function', type: :system do
         # fill_in "Login",	with: "doe@fil.com" 
         # fill_in "Password",	with: "password" 
         # click_on("Log in")
+        user= User.last
         FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
         FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
         FactoryBot.create(:property, name: 'Elysée', description: 'Appartement moderne', type_of_property: 'Duplex', status: 'Vaccant', address: 'Parakou', user_id: user.id )  
         visit properties_path
         select 'Vaccant', from: 'Status'
         click_on 'Search'
-        properties = all('.property_row')
-        expect(properties[0]).to have_content 'Appartement moderne'
+        # properties = all('.property_row')
+        expect(page).to have_content 'Presidence'
+        expect(page).to have_content 'Appartement moderne'
       end
     end
     context 'When you search for status' do
@@ -127,6 +127,7 @@ RSpec.describe 'Property management function', type: :system do
         # fill_in "Login",	with: "doe@fil.com" 
         # fill_in "Password",	with: "password" 
         # click_on("Log in")
+        user= User.last
         FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
         FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
         FactoryBot.create(:property, name: 'Elysée', description: 'Appartement moderne', type_of_property: 'Duplex', status: 'Vaccant', address: 'Parakou', user_id: user.id )  
@@ -145,6 +146,7 @@ RSpec.describe 'Property management function', type: :system do
         # fill_in "Login",	with: "doe@fil.com" 
         # fill_in "Password",	with: "password" 
         # click_on("Log in")
+        user= User.last
         FactoryBot.create(:property, name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou', user_id: user.id )
         FactoryBot.create(:second_property, name: 'Erevan', description: 'Habitation de rêve', type_of_property: 'House', status: 'Occupied', address: 'Aplahoué', user_id: user.id )
         FactoryBot.create(:property, name: 'Elysée', description: 'Appartement moderne', type_of_property: 'Duplex', status: 'Vaccant', address: 'Parakou', user_id: user.id )  

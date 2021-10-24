@@ -1,4 +1,4 @@
-#bundle exec rspec spec/models/comment_spec.rb
+#bundle exec rspec spec/system/comment_spec.rb
 require 'rails_helper'
 
 RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
@@ -32,23 +32,23 @@ RSpec.describe 'Fonction de gestion des Commentaires', type: :system do
      context "Lors de la mise à jour du commentaire du post" do
        it "Le formulaire d'édition est renvoyé avec le commentaire" do
         visit properties_path
-        click_on "Show"
+        click_on 'Show'
 
         user= User.last
         comment = FactoryBot.create(:comment, content: 'Commentaire du post', user_id: user.id , property_id: @property.id)
-        click_on "Create Comment"
-        sleep 2
-        click_on "Edit"
+        # click_on "Create Comment"
+        # sleep 2
+        click_on 'Edit'
         expect(page).to have_content 'Editing comment'
        end
      end
     context "Lors de la suppression d'un commentaire" do
       it "Le commentaire supprimé est enlevé de la liste des commentaires" do
         visit properties_path
-        click_on "Show"
+        click_on 'Show'
         user= User.last
         comment = FactoryBot.create(:comment, content: 'Commentaire du post', user_id: user.id , property_id: @property.id)
-        click_on "Create Comment"
+        # click_on "Create Comment"
         sleep 2
         expect(Comment.count).to eq(1)
 
