@@ -38,7 +38,7 @@ $ rails assets:precompile RAILS_ENV=production
 $ git add .
 $ git commit -am "init"
 $ heroku buildpacks:add heroku/ruby
-$ heroku buildpacks:add --index 1 heroku/nodejs
+$ heroku buildpacks:set heroku/nodejs
 $ heroku buildpacks:add https://github.com/heroku/heroku-buildpack-nginx
 $ git push heroku master
 $ heroku logs -t
