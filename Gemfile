@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails', '5.2.5'
 gem 'rake', '~> 13.0', '>= 13.0.6'
-# ruby '2.6.5'
+ruby '2.6.5'
 
 
 #Administration & Authentication
