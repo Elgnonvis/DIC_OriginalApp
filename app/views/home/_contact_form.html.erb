@@ -1,14 +1,19 @@
 <%= form_for @contact, url: 'home#contact', remote: true do |f| %>
     <div class="col-md-6">
         <%= f.label :name %>
-        <%= f.text_field  :name, required: true, class: "contact-form-text-area mb-2" %></br>
+        <%= f.text_field  :name,
+                          autofocus: true,
+                          placeholder: 'Votre nom',
+                          required: true, class: "contact-form-text-area mb-2" %></br>
 
         <%= f.label :email %>
-        <%= f.text_field :email, required: true, class: "contact-form-text-area mb-2" %></br>
+        <%= f.text_field :email, 
+                          placeholder: 'Votre mail',
+                          required: true, class: "contact-form-text-area mb-2" %></br>
 
       <%= f.label :message %>
       <%= f.text_area :message, rows: 5, cols: 50, required: true, class: "contact-form-text-area",
-                        placeholder: "Send me a message"%>
+                        placeholder: "Votre message"%>
 
       <div class= "hidden">
         <%= f.label :nickname %>
