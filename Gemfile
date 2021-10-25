@@ -17,6 +17,7 @@ gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.1'
 gem 'cancancan', '~> 3.3'
 gem 'mail_form', '~> 1.9'
+gem 'faker'
 
 
 #Image..
@@ -55,7 +56,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'launchy'
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 end
