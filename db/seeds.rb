@@ -5,7 +5,7 @@
 #ge
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create(username: "Elgnonvis", email: "elgnonvis@gmail.com", password: "password", is_admin: true)
+user = User.create(username: "Elgnonvis", email: "elgnonvis@gmail.com", password: "95862627", is_admin: true)
 # properties = Property.all
 
 # properties.each do |property|

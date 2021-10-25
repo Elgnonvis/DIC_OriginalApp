@@ -23,6 +23,8 @@
                 </div> 
             <% else %>
               <div class="col-12 text-end text-decoration-none">
+                <%= link_to 'Log in as Admin Guest ', guest_admin_path, method: :post, class: " me-2 btn btn-success "%>
+                <%= link_to 'Log in as Guest', guest_user_path, method: :post, class: " me-2 btn btn-success "%>
                 <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button">Login</a>
                 <a class="btn btn-warning" href="<%= new_user_registration_path %>" role="button">Sign Up</a>
                 <a class ="btn btn-success" href="<%= contact_path %>" role="button">Contact_us</a>

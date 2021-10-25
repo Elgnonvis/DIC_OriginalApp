@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :home, only: [:index, :new, :create]
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   
+  post 'guest', to: 'home#guest_user', as: 'guest_user'
+  post 'admin', to: 'home#guest_admin', as: 'guest_admin'
   devise_for :users
   get '/profil', to: 'users#show', as: :profil
   resources :users, only: [:show]
