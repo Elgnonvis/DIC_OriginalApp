@@ -2,12 +2,12 @@
 
 <p><strong>Description:  </strong><%= @appointment.description %></p>
 
-<p><strong>Status:  </strong><%= @appointment.status %></p>
+<p><strong>Statut:  </strong><%= @appointment.status %></p>
 
 <p><strong>Date:  </strong><%= @appointment.date %></p>
 
-<p><strong>User:  </strong><%= @appointment.user.username %></p>
+<p><strong>Utilisateur:  </strong><%= @appointment.user.username %></p>
 
-<%= link_to 'Edit', edit_appointment_path(@appointment), class:"btn btn-warning mb-2" %>
-<%= link_to 'Back', appointments_path, class:"btn btn-success mb-2" %>
+<%= link_to 'Modifier', edit_appointment_path(@appointment), class:"btn btn-warning mb-2" %>
+<%= link_to 'Retour', appointments_path, class:"btn btn-success mb-2" %>
 </div>

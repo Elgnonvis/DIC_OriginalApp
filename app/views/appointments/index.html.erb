@@ -1,10 +1,10 @@
 
 <div class="container text-center">
-  <h1>Appointments</h1><br>
+  <h1>Liste de mes rendez-vous</h1><br>
 
   <div class ='table-responsive'>
     <div class="">
-      <a href = "<%= new_appointment_path  %>" class="btn btn-primary">New Appointment</a>
+      <a href = "<%= new_appointment_path  %>" class="btn btn-primary">Demande de rendez-vous</a>
     </div> <br >
 
 
@@ -12,9 +12,9 @@
       <thead>
         <tr>
           <th>Description</th>
-          <th>Status</th>
+          <th>Statut</th>
           <th>Date</th>
-          <th>Resquested by</th>
+          <th>Demandez par</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -27,9 +27,9 @@
             <td><%= appointment.date %></td>
             <td><%= appointment.user.username %></td>
             <td>
-              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-primary">Show</a>
-              <a href = "<%= edit_appointment_path(appointment) %>" class="btn btn-warning">Edit</a>
-              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE">Destroy</a>
+              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-primary">Voir</a>
+              <a href = "<%= edit_appointment_path(appointment) %>" class="btn btn-warning">Modifier</a>
+              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE">Supprimer</a>
             </td>
             
           </tr>
