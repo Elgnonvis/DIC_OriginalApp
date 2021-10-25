@@ -11,14 +11,18 @@
       <%= f.input :status, :collection => ["Occupied", "Vaccant"],:input_html => { :class => 'form-control'}, id: "status", include_blank: false %>
     </div>
     <div class="form-group mt-3 mb-3">
-      <%= f.input :name, autofocus: true %>
+      <%= f.input :name,
+                  placeholder: 'Nom de la propriété',
+                  autofocus: true %>
     </div>
     <div class="form-group mt-3 mb-3">
-      <%= f.input :description %>
+      <%= f.input :description,
+                  placeholder: 'Une description de la propriété' %>
     </div> 
 
     <div class="form-group mb-3">
-       <%= f.input :address %>
+       <%= f.input :address,
+                    placeholder: "L'adresse de la propriété" %>
     </div>
      <div class="form-group mt-3 mb-3">
       <%= f.input :price %>

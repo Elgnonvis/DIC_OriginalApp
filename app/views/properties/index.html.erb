@@ -52,8 +52,10 @@
             <td><%= property.user.username %></td>
             <td>
               <a href = "<%= property_path(property.id) %>" class="btn btn-primary">Show</a>
-              <a href = "<%= edit_property_path(property) %>" class="btn btn-warning">Edit</a>
-              <a href = "<%= property_path(property.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE">Destroy</a>
+              <% if current_user.is_admin %>
+                <a href = "<%= edit_property_path(property) %>" class="btn btn-warning">Edit</a>
+                <a href = "<%= property_path(property.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE">Destroy</a>
+              <% end %>
             </td>
           </tr>
         <% end %>

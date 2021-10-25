@@ -1,4 +1,4 @@
-<div class="w-50 d-flex flex-column container justify-content-center align-itmes-center" style = "padding-top: 1rem; border: 1px solid;">
+<div class="w-50 d-flex flex-column container justify-content-center align-itmes-center mt-2" style = "padding-top: 1rem; border: 1px solid;">
 <h2><%= t(".sign_up") %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -7,17 +7,21 @@
   <div class="form-inputs">
  <%= f.input :username,
                 required: true,
+                placeholder: 'Your nickname or username',
                 autofocus: true,
                 input_html: { autocomplete: "username" }%>
     <%= f.input :email,
+                placeholder: 'Mail valid',
                 required: true,
                 autofocus: false ,
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password,
+                placeholder: 'Mot de passe',
                 required: true,
                 hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
+                placeholder: 'Re-entrer le mot de passe ci-dessus',
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>

@@ -16,7 +16,7 @@ user = User.create(username: "Admin", email: "admin@gmail.com", password: "passw
 #     property.update(user_id: User.last.id) 
 # end
 require 'faker'
-appointment = Appointment.create(description: "Visitez la maison de la plage", user_id: User.first.id)
+appointment = Appointment.create(description: "Visitez la maison de la plage", status: "High", user_id: User.first.id)
 appointment = Appointment.create(description: "Venir vous rencontrer pour discuter des possibilités d'achat à credit", status: "Low", user_id: User.last.id)
 appointment = Appointment.create(description: "Les types de tontine pour l'achat de parcelle", status: "High", user_id: User.first.id)
 appointment = Appointment.create(description: "Signez les papiers d'achat", status: "Medium", user_id: User.last.id)
