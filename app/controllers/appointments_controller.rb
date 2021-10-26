@@ -30,6 +30,7 @@ load_and_authorize_resource
 
     respond_to do |format|
       if @appointment.save
+        AppointmentMailer.appointment_mailer(current_user).deliver
         flash[:success] = t("appointments.created")
         format.html { redirect_to @appointment }
         format.json { render :show, status: :created, location: @appointment }
