@@ -15,7 +15,7 @@ RSpec.describe Property, type: :model do
       it 'Validation choué' do
         property = Property.new(name: 'Presidence', description: '', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou')
         property.valid?
-        expect(property.errors[:description]).to include("can't be blank")
+        expect(property.errors[:description]).to include("Description ne peut pas être vide")
       end
     end
   end

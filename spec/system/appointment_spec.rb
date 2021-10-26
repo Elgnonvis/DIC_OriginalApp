@@ -8,8 +8,8 @@ RSpec.describe 'Management de la fonction des rendez-vous', type: :system do
     fill_in 'Username',	with: 'JOHN'
     fill_in 'Email',	with: 'doe@fil.com'
     fill_in 'user_password', with: 'password' 
-    fill_in 'Password confirmation', with: 'password'
-    click_button 'Sign up'
+    fill_in 'user_password_confirmation', with: 'password'
+    click_button 'Inscription'
     # user= User.last
   end   
   
@@ -35,7 +35,7 @@ RSpec.describe 'Management de la fonction des rendez-vous', type: :system do
 
         visit new_appointment_path
         fill_in 'appointment[description]', with: "A côté de la plage"
-        click_on 'Create Appointment'
+        click_on 'Créer un(e) Rendez-vous'
         expect(page).to have_content 'A côté de la plage'
       end
     end

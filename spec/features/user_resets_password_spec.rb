@@ -1,16 +1,17 @@
 #rspec spec/features
+#bundle exec rspec
 require 'rails_helper'
 
 RSpec.feature "L'utlisateur réinitialise son mot de passe" do
-  # scenario 'user enters a valid email' do
+  # scenario 'Utilisateur entre un mail valide' do
   #   user = create :user
 
   #   visit new_user_password_path
 
   #   fill_in 'Email', with: user.email
-  #   click_button 'Send me reset password instructions'
+  #   click_button 'Envoyez-moi des instructions pour réinitialiser mon mot de passe'
 
-  #   expect(page).to have_text 'You will receive an email with instructions'
+  #   expect(page).to have_text 'Vous allez recevoir les instructions de réinitialisation du mot de passe dans quelques instants.'
   #   expect(page).to have_current_path new_user_session_path
   # end
 
@@ -18,9 +19,9 @@ RSpec.feature "L'utlisateur réinitialise son mot de passe" do
     visit new_user_password_path
 
     fill_in 'Email', with: 'username@example.com'
-    click_button 'Send me reset password instructions'
+    click_button 'Envoyez-moi des instructions pour réinitialiser mon mot de passe'
 
-    expect(page).to have_text 'Email not found'
+    expect(page).to have_text "Email n'a pas été trouvé(e)"
   end
 
   # scenario 'user changes password' do

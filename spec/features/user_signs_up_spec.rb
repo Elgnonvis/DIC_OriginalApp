@@ -10,7 +10,7 @@ RSpec.feature "L'utilisateur s'inscrire" do
     # find('div.user_password').fill_in 'Password' with: 'password'
     fill_in 'user_password', with: 'password' 
     # fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'user_password_confirmation', with: 'password'
     click_button 'Inscription'
 
     expect(page).to have_text 'Bienvenue, vous êtes connecté.'
@@ -21,10 +21,10 @@ RSpec.feature "L'utilisateur s'inscrire" do
   scenario 'avec des données invalides' do
     visit new_user_registration_path
 
-    click_button 'Sign up'
+    click_button 'Inscription'
 
-    expect(page).to have_text "Email can't be blank"
-    expect(page).to have_text "Password can't be blank"
-    expect(page).to have_no_link 'Log out'
+    expect(page).to have_text "Email ne peut pas être vide"
+    expect(page).to have_text "Mot de passe Mot de passe ne peut pas être vide"
+    expect(page).to have_no_link 'Se déconnecter'
   end
 end

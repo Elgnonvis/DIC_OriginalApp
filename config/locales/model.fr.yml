@@ -1,7 +1,7 @@
 fr:
   activerecord:
     models:
-      property: Proprité
+      property: Propriété
       comment: "Commentaire"
     attributes:
       property:

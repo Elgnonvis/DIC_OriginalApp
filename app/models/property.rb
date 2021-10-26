@@ -11,8 +11,11 @@ class Property < ApplicationRecord
   validates :address, presence: true
   validates :type_of_property, presence: true
   validates :status, presence: true
+  validate :image_type
 
-
+  # def thumbnail input
+  #   return self.images[input].variant(resize: '500*500!').processed
+  # end
 
   scope :type_of_property_search, -> (query) {where("type_of_property LIKE ?", "%#{query}%")}
     def type_of_property_search(query)
@@ -23,5 +26,13 @@ class Property < ApplicationRecord
     def status_search(query)
       where(status: query)
     end
-  
+
+  private
+  def image_type
+    images.each do |image|
+      if !image.content_type.in?(%('image/jpeg image/png '))
+        errors.add(:images, 'needs to be JPEG or PNG')
+      end
+    end
+  end
 end

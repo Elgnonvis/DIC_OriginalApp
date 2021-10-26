@@ -28,7 +28,8 @@
   </div>
 
   <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
-    <% if @property.user == current_user %>
+  
+    <% if current_user.is_admin && @property.user == current_user %>
         <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>"><%= t("button.edit") %></a> 
     <% end %>
       <a href = "<%= properties_path %>" class="btn btn-primary w-25 m-4"><%= t("button.back") %></a>
