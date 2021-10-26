@@ -20,7 +20,7 @@
   </div><br>
     <blockquote class="blockquote mb-0">
       <footer class="blockquote-footer">
-        <%= t("properties.posted_by") %> : <cite title="Source Title"><%= @property.user.username %></cite>
+        <%= t("properties.posted_by") %> : <cite title="Source Title"><%= @property.user.username if @property.user %></cite>
         -- <small class="text-muted"><%= @property.created_at.to_time.strftime("%d %b %Y à %H:%M") %></small>
 
       </footer> 
