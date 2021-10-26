@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :appointments, dependent: :destroy
   has_many :comments, dependent: :destroy
   attr_accessor :login
+  validates :username, presence: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   validates :username, presence: false, uniqueness: {case_sensitive: false}, format: { with: /\A[a-zA-Z0-9 _\.]*\z/ }

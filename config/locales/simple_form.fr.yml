@@ -12,11 +12,21 @@ fr:
       default_message: 'Veuillez examiner les problèmes ci-dessous:'
     labels:
       defaults:
-        name: 'Nom'
+        name: 'Nom de la propriété'
         address: 'Adresse'
         price: 'Prix'
         type_of_property: 'Type de propriété'
-      # nom d'un moel
+        status: 'Statut'
+      # nom d'un model
+    views:
+    button:
+      submit: 'Submit'
+      edit: 'Modifier'
+      delete: 'Supprimer'
+      Show: 'Voir'
+      Back: 'Retour'
+      destroy: "Suprimer"
+
       #   jjjjj
     # Examples
     # labels:

@@ -1,8 +1,8 @@
 <div class="w-50 d-flex flex-column container justify-content-center align-itmes-center" style = "padding-top: 1rem; border: 1px solid;">
 
-<h1>New Appointment</h1>
+<h1><%= t("appointments.new") %></h1>
 
 <%= render 'form', appointment: @appointment %>
+<a href = "<%= appointments_path %>" class="btn btn-warning mb-2"><%= t("button.back") %></a>
 
-<%= link_to 'Back', appointments_path, class:"btn btn-warning mb-2" %>
 </div>

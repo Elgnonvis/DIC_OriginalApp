@@ -9,9 +9,7 @@
   </div>
 
   <div class="form-actions", style="padding-top:20px; padding-bottom:20px;">
-      <%= button_to ( f.object.new_record? ? "Create Comment" : "Update Comment"), property_comments_path(property_id: @property), remote: true,
+      <%= button_to ( f.object.new_record? ? t("button.create_comment") : t("button.update_comment") ), property_comments_path(property_id: @property), remote: true,
        class: 'btn btn-primary'  %>
     </div>
 <% end %>
-
-

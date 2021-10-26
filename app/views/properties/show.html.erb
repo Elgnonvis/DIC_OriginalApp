@@ -5,36 +5,37 @@
       <%= (0...@property.images.count).each do |image| %>
       <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
     <% end %>
-     
-    </div>
-    <p><strong>Name:  </strong><%= @property.name %></p>
-    <p><strong>Type of property:  </strong><%= @property.type_of_property %></p>
+    </div>  
+    <p><strong><%= t("properties.name") %> : </strong><%= @property.name %></p>
+    <p><strong><%= t("properties.type_of_property") %> : </strong><%= @property.type_of_property %></p>
 
     <p><strong>Description:  </strong><%= @property.description %></p>
 
-    <p><strong>Address:  </strong><%= @property.address %></p>
+    <p><strong><%= t("properties.address") %> : </strong><%= @property.address %></p>
 
-    <p><strong>Price:  </strong><%= @property.price %> FCFA</p>
+    <p><strong><%= t("properties.price") %>  : </strong><%= @property.price %> FCFA</p>
 
-    <p><strong>Status:  </strong><%= @property.status %></p>
+    <p><strong><%= t("properties.status") %>  : </strong><%= @property.status %></p>
 
   </div><br>
     <blockquote class="blockquote mb-0">
       <footer class="blockquote-footer">
-        Posté par : <cite title="Source Title"><%= @property.user.username %></cite>
+        <%= t("properties.posted_by") %> : <cite title="Source Title"><%= @property.user.username %></cite>
+        -- <small class="text-muted"><%= @property.created_at.to_time.strftime("%d %b %Y à %H:%M") %></small>
+
       </footer> 
     </blockquote>
   </div>
 
   <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
     <% if @property.user == current_user %>
-        <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>">Modifier</a> 
+        <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>"><%= t("button.edit") %></a> 
     <% end %>
-        <a class="btn btn-primary w-25 m-4" href = "<%= properties_path %>"> Properties</a>        
+      <a href = "<%= properties_path %>" class="btn btn-primary w-25 m-4"><%= t("button.back") %></a>
   </div>
 
       <hr />
-  <p>List of comments </p>
+  <p><%= t("comments.list") %></p>
 
   <div class="feed-activity-list">
     <div id="" class="">

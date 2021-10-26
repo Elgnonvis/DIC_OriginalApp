@@ -56,7 +56,7 @@ class PropertiesController < ApplicationController
         # params[:property][:images].each do |a|
         #   @property = @property.images.create!(:images =>a)
         # end
-          flash[:success] = "Property was successfully created."
+          flash[:success] = t("properties.created")
           format.html { redirect_to @property }
           format.js { render :index }
       else
@@ -71,7 +71,7 @@ class PropertiesController < ApplicationController
   def update
     respond_to do |format|
       if @property.update(property_params)
-        flash[:success] = "Property was successfully updated." 
+        flash[:success] = t("properties.updated") 
         format.html { redirect_to @property }
         format.json { render :show, status: :ok, location: @property }
       else
@@ -85,7 +85,7 @@ class PropertiesController < ApplicationController
   def destroy
     @property.destroy
     respond_to do |format|
-      flash[:danger] = "Property was successfully destroyed."
+      flash[:danger] = t("properties.destroyed")
       format.html { redirect_to properties_url }
       format.json { head :no_content }
     end

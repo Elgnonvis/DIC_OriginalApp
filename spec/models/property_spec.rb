@@ -5,14 +5,14 @@ require 'rails_helper'
 RSpec.describe Property, type: :model do
 
   describe 'Validation test de Property' do
-    context 'If the property Name is empty' do
-      it "property registration must fail" do
+    context 'Si le nom de la propriété est vide' do
+      it "L'enregistrement de la propriété échoue" do
         property = Property.new(name: '', description: 'Failure test')
         expect(property).not_to be_valid
       end
     end
-    context 'If the property description is empty' do
-      it 'Validation is caught' do
+    context 'Si la description de la propriété est vide' do
+      it 'Validation choué' do
         property = Property.new(name: 'Presidence', description: '', type_of_property: 'Villa', status: 'Vaccant', address: 'Cotonou')
         property.valid?
         expect(property.errors[:description]).to include("can't be blank")
@@ -26,8 +26,8 @@ RSpec.describe Property, type: :model do
     #   end
     # end
   describe 'Fonction de modèle des Properties' do
-    context 'If the property name, description and address are described' do
-      it 'Validation passes' do
+    context 'Si tous les champs sont renseignés' do
+      it 'La validation passe' do
         user = create :user
         user= User.last
         property = Property.new(name: 'Presidence', description: 'Villa propre', type_of_property: 'Villa', status: 'Vaccant', address: 'Azove', user_id: user.id)
@@ -36,6 +36,31 @@ RSpec.describe Property, type: :model do
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     # Step 3 tests
   # describe 'Search function' do
   #   before do

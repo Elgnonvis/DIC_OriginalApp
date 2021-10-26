@@ -1,0 +1,14 @@
+fr:
+  activerecord:
+    models:
+      property: Proprité
+      comment: "Commentaire"
+    attributes:
+      property:
+        name: Nom de la propriété
+        details: Détails de la propriété
+        type_of_property: Type de propriété
+        status: Statut
+        description: Description
+        address: Adresse
+        price: Prix

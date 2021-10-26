@@ -1,6 +1,6 @@
 #bundle exec rspec spec/system/property_spec.rb
 require 'rails_helper'
-RSpec.describe 'Property management function', type: :system do
+RSpec.describe 'Management de la fonction Propriété', type: :system do
 
   before(:each) do
 
@@ -27,9 +27,9 @@ RSpec.describe 'Property management function', type: :system do
 
   end   
   
-  describe 'New creation function' do
-    context 'When creating a new property' do
-      it 'The created property is displayed' do
+  describe 'Nouvelle création de la fonction' do
+    context "Lors de la création d'une nouvelle fonction" do
+      it 'La propriété créee est affichée' do
          # Create a property for use in testing
         
         #  visit new_user_session_path
@@ -54,9 +54,9 @@ RSpec.describe 'Property management function', type: :system do
     end
   end
 
-  describe 'List display function' do
-    context 'When transitioning to the list screen' do
-      it 'The created property list is displayed' do
+  describe "Fonction d'affichage" do
+    context "Lorsqu'on passe sur l'écran de liste" do
+      it 'La propriété créée est affichée' do
 
         visit new_property_path
         fill_in 'property[name]', with: "Maison de rêve"
@@ -69,9 +69,9 @@ RSpec.describe 'Property management function', type: :system do
     end
   end
   
-  describe 'Detailed display function' do
-     context 'When transitioned to any property details screen' do
-       it 'The content of the relevant property is displayed' do
+  describe 'Fonction de détails' do
+     context "Lorsqu'on visite les détails de n'importe propriété" do
+       it 'Le contenu de ladite propriété est affichée' do
         #   visit new_user_session_path
         #   fill_in "Login",	with: "doe@fil.com" 
         #   fill_in "Password",	with: "password" 
@@ -85,7 +85,7 @@ RSpec.describe 'Property management function', type: :system do
   end
 
   context 'When propertys are arranged in descending order of creation date and time' do
-    it 'New property is displayed at the top' do
+    it 'La nouvelle propriété est affichée en tête de list' do
     #   visit new_user_session_path
     #   fill_in "Login",	with: "doe@fil.com" 
     #   fill_in "Password",	with: "password" 
@@ -101,7 +101,7 @@ RSpec.describe 'Property management function', type: :system do
   end
 
    #Les tests de l'étape 3
-   describe 'Search function' do
+   describe 'Fonction de recherche' do
     
     context 'If you do a fuzzy search by Name' do
       it "Filter by properties that include search keywords" do

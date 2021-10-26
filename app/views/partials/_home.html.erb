@@ -2,7 +2,7 @@
     <div class="container-fluid row d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
      
         <div class="col-3">
-            <a href="/" class="navbar-brand mb-2 mb-lg-0 text-white"><span class="fb">OnlineEstateAgency | Home </span></a>
+            <a href="/" class="navbar-brand mb-2 mb-lg-0 text-white"><span class="fb"><%= t("button.brand") %></span></a>
         </div>
         
         <div class=" col-9">
@@ -10,25 +10,25 @@
               <div class="row">
                 <div class="col-7 ">
                   <div class="form-group d-flex justify-content-center mb-2 mb-lg-0 ">
-                    <a href="<%= properties_path %>" class="btn btn-warning me-5 ml-5" role="button">Liste propriétés</a>
-                    <a href="<%= me_appointments_path %>" class="btn btn-success me-5 " role="button">Mes rendez-vous</a>
+                    <a href="<%= properties_path %>" class="btn btn-warning me-5 ml-5" role="button"><%= t("button.properties_list") %></a>
+                    <a href="<%= me_appointments_path %>" class="btn btn-success me-5 " role="button"><%= t("button.my_appointments") %></a>
                     <% if current_user.is_admin %>
                       <a href="<%= rails_admin_path %>" class="btn btn-info ml-2 " role="button">Management</a>
                     <% end %>
                   </div>  
                 </div>
                 <div class=" col-5  text-end text-decoration-none">
-                <a class ="btn btn-info" href="<%= contact_path %>" role="button">Nous contacter</a>
+                <a class ="btn btn-info" href="<%= contact_path %>" role="button"><%= t("button.contact_us") %></a>
                   <%= link_to "Profile", profil_path, class:"btn btn-success me-2" %>
-                  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
+                  <%= link_to t("button.log_out"), destroy_user_session_path, method: :delete, class:"btn btn-danger" %>
                 </div> 
             <% else %>
               <div class="col-12 text-end text-decoration-none">
-                <%= link_to 'Invité admin ', guest_admin_path, method: :post, class: " me-2 btn btn-success "%>
-                <%= link_to 'Invité simple', guest_user_path, method: :post, class: " me-2 btn btn-info "%>
-                <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button">Se connecter</a>
-                <a class="btn btn-warning me-2" href="<%= new_user_registration_path %>" role="button">S'inscrire</a>
-                <a class ="btn btn-info" href="<%= contact_path %>" role="button">Nous contacter</a>
+                <%= link_to t("button.admin"), guest_admin_path, method: :post, class: " me-2 btn btn-success "%>
+                <%= link_to t("button.guest"), guest_user_path, method: :post, class: " me-2 btn btn-info "%>
+                <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button"><%= t("button.log_in") %></a>
+                <a class="btn btn-warning me-2" href="<%= new_user_registration_path %>" role="button"><%= t("button.sign_up") %></a>
+                <a class ="btn btn-info" href="<%= contact_path %>" role="button"><%= t("button.contact_us") %></a>
                 
               </div> 
               </div>

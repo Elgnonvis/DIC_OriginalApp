@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     # Change format according to client request
     respond_to do |format|
       if @comment.save
-        flash[:succes] = 'Comment was successfully posted.'
+        flash[:succes] = t("comments.created")
         format.html { redirect_to property_path(@property) }
         format.js { render :index }
         # format.json { render :show, status: :created, location: [@servicerequest, @upload] }
@@ -34,7 +34,7 @@ class CommentsController < ApplicationController
     @comment = @property.comments.find(params[:id])
       respond_to do |format|
         if @comment.update(comment_params)
-          flash.now[:notice] = 'Comment edited'
+          flash.now[:notice] = t("comments.updated")
           format.js { render :index }
         else
           flash.now[:notice] = 'Failed to edit comment'

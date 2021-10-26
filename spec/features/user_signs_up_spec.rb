@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 
-RSpec.feature 'User signs up' do
-  scenario 'with valid data' do
+RSpec.feature "L'utilisateur s'inscrire" do
+  scenario 'Avec des données valides' do
     visit new_user_registration_path
 
     fill_in 'Username', with: 'username'
@@ -11,20 +11,20 @@ RSpec.feature 'User signs up' do
     fill_in 'user_password', with: 'password' 
     # fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
-    click_button 'Sign up'
+    click_button 'Inscription'
 
-    expect(page).to have_text 'Welcome! You have signed up successfully.'
+    expect(page).to have_text 'Bienvenue, vous êtes connecté.'
     # expect(page).to have_but 'Sign Out'
     # expect(page).to have_current_path root_path
   end
 
-  scenario 'with invalid data' do
+  scenario 'avec des données invalides' do
     visit new_user_registration_path
 
     click_button 'Sign up'
 
     expect(page).to have_text "Email can't be blank"
     expect(page).to have_text "Password can't be blank"
-    expect(page).to have_no_link 'Log Out'
+    expect(page).to have_no_link 'Log out'
   end
 end

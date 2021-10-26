@@ -1,7 +1,7 @@
 #rspec spec/features
 require 'rails_helper'
 
-RSpec.feature 'User resets a password' do
+RSpec.feature "L'utlisateur réinitialise son mot de passe" do
   # scenario 'user enters a valid email' do
   #   user = create :user
 
@@ -14,7 +14,7 @@ RSpec.feature 'User resets a password' do
   #   expect(page).to have_current_path new_user_session_path
   # end
 
-  scenario 'user enters an invalid email' do
+  scenario "L'utilisateur entre un mauvais e-mail" do
     visit new_user_password_path
 
     fill_in 'Email', with: 'username@example.com'

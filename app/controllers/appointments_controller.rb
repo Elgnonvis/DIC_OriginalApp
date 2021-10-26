@@ -30,7 +30,7 @@ load_and_authorize_resource
 
     respond_to do |format|
       if @appointment.save
-        flash[:success] = "Appointment was successfully created."
+        flash[:success] = t("appointments.created")
         format.html { redirect_to @appointment }
         format.json { render :show, status: :created, location: @appointment }
       else
@@ -44,7 +44,7 @@ load_and_authorize_resource
   def update
     respond_to do |format|
       if @appointment.update(appointment_params)
-        flash[:success] = "Appointment was successfully updated."
+        flash[:success] = t("appointments.updated")
         format.html { redirect_to @appointment }
         format.json { render :show, status: :ok, location: @appointment }
       else
@@ -58,7 +58,7 @@ load_and_authorize_resource
   def destroy
     @appointment.destroy
     respond_to do |format|
-      flash[:danger] = "Appointment was successfully destroyed."
+      flash[:danger] = t("appointments.destroyed")
       format.html { redirect_to appointments_url }
       format.json { head :no_content }
     end

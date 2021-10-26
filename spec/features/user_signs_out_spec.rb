@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 
-RSpec.feature 'User signs out' do
-  scenario 'user signed in' do
+RSpec.feature "L'utilisateur se déconnecte" do
+  scenario "L'utilisateur se connecte" do
     user = create :user
 
     sign_in user

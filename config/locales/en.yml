@@ -22,7 +22,8 @@
 # true, false, on, off, yes, no
 #
 # Instead, surround them with single quotes.
-#
+#     
+
 # en:
 #   'true': 'foo'
 #
@@ -30,9 +31,34 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  appointments:
+    title: "Appointments List"
+    add: "Add new Appointment"
+    new: "Resquest an Appointment"
+    created: "Appointment was successfully created."
+    destroyed: "Appointment was successfully destroyed."
+    updated: "Appointment was successfully updated."
+    edit: "Updating an Appointment"
+  properties:
+    title: "Properties List"
+    add: "Add new Property"
+    by_status: "Sort property by status"
+    by_type: "Sort property by type"
+    created: "Property was successfully created."
+    destroyed: "Property was successfully destroyed."
+    updated:  "Property was successfully updated."
+    edit: "Update a Property"
+    
+  comments:
+    list: "Comments List"
+    created: "Comment was successfully posted."
+    updated: "Comment edited successfully"
+    
   activerecord:
     errors:
       messages:
+        blank: "%{attribute} can't be blank"
+        invalid: "%{attribute} isn't valid"
         record_invalid: 'Validation failed: %{errors}'
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
@@ -293,12 +319,17 @@ en:
       edit_profile: 'Edit Profile'
       team_you_belong_to: 'The team you belong to'
       posted_articles: 'List of posted articles'
-    button:
-      submit: 'Submit'
-      edit: 'Edit'
-      delete: 'Delete'
-      create: 'Create'
-      invite: 'Invite'
+  button:
+    submit: 'Submit'
+    edit: 'Edit'
+    delete: 'Delete'
+    create: 'Create'
+    invite: 'Invite'
+    brand: "OnlineEstateAgency | Home"
+    create_comment: "Create Comment"
+    update_comment: "Update Comment"
+    admin: "Guest Admin"
+    guest: "Simple Guest"
     top:
       line1: 'it is an application to share a specific issue (agenda) easily'
       line2: 'for each member separately for each team or agenda'

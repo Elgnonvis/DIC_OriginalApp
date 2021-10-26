@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 
-RSpec.feature 'User signs in' do
-  scenario 'with valid credentials' do
+RSpec.feature "L'utilisateur se connecte" do
+  scenario 'avec des données valides' do
     user = create :user
 
     visit new_user_session_path
@@ -16,7 +16,7 @@ RSpec.feature 'User signs in' do
     # expect(page).to have_current_path root_path
   end
 
-  scenario 'with invalid credentials' do
+  scenario "avec des données valides" do
     user = build :user
 
     visit new_user_session_path
