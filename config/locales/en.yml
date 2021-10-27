@@ -34,14 +34,17 @@ en:
   appointments:
     title: "Appointments List"
     add: "Add new Appointment"
+    details: "Appointment's details"
     new: "Resquest an Appointment"
     created: "Appointment was successfully created."
     destroyed: "Appointment was successfully destroyed."
     updated: "Appointment was successfully updated."
     edit: "Updating an Appointment"
+    confirmed: "Acceptance"
   properties:
     title: "Properties List"
     add: "Add new Property"
+    details: "Property's details"
     by_status: "Sort property by status"
     by_type: "Sort property by type"
     created: "Property was successfully created."
@@ -53,6 +56,11 @@ en:
     list: "Comments List"
     created: "Comment was successfully posted."
     updated: "Comment edited successfully"
+  users:
+    details: "My account's details"
+  contact:
+    msg: "This is our contact form"
+    send: "Send message"
     
   activerecord:
     errors:
@@ -325,6 +333,7 @@ en:
     delete: 'Delete'
     create: 'Create'
     invite: 'Invite'
+    search: 'Search'
     brand: "OnlineEstateAgency | Home"
     create_comment: "Create Comment"
     update_comment: "Update Comment"

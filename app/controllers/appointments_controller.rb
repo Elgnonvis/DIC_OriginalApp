@@ -3,7 +3,7 @@ load_and_authorize_resource
 
   # GET /appointments or /appointments.json
   def index
-    @appointments = Appointment.all.page(params[:page])
+    @appointments = Appointment.order(created_at: :desc).page(params[:page])
   end
 
   def me

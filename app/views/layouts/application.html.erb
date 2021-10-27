@@ -12,7 +12,7 @@
 
   <body>
    <%= render "partials/home" %>
-   <div class="container" style = "padding-top: 4rem">
+   <div style = "container">
       <% flash.each do |name, msg| %>
         <div class="alert alert-<%= name %>" role = "alert"> <%= msg %></div>
       <% end %>

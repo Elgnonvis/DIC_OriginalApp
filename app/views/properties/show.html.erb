@@ -1,33 +1,32 @@
+<br> <br>
 <div class="d-flex flex-column justify-content-center align-itmes-center card text-center" style=""> <br>
-
-  <div class="card-body">
+  <h1><%= t("properties.details") %></h1>
+  <div class=" container card-body">
     <div class="card-img-top">
       <%= (0...@property.images.count).each do |image| %>
       <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
     <% end %>
-    </div>  
-    <p><strong><%= t("properties.name") %> : </strong><%= @property.name %></p>
-    <p><strong><%= t("properties.type_of_property") %> : </strong><%= @property.type_of_property %></p>
+    </div>  <br>
 
-    <p><strong>Description:  </strong><%= @property.description %></p>
-
-    <p><strong><%= t("properties.address") %> : </strong><%= @property.address %></p>
-
-    <p><strong><%= t("properties.price") %>  : </strong><%= @property.price %> FCFA</p>
-
-    <p><strong><%= t("properties.status") %>  : </strong><%= @property.status %></p>
+    <div>
+      <p><strong><%= t("properties.name") %> : </strong><%= @property.name %></p>
+      <p><strong><%= t("properties.type_of_property") %> : </strong><%= @property.type_of_property %></p>
+      <p><strong>Description:  </strong><%= @property.description %></p>
+      <p><strong><%= t("properties.address") %> : </strong><%= @property.address %></p>
+      <p><strong><%= t("properties.price") %>  : </strong><%= @property.price %> FCFA</p>
+      <p><strong><%= t("properties.status") %>  : </strong><%= @property.status %></p>
+    </div>
 
   </div><br>
-    <blockquote class="blockquote mb-0">
+    <blockquote class=" container blockquote">
       <footer class="blockquote-footer">
         <%= t("properties.posted_by") %> : <cite title="Source Title"><%= @property.user.username if @property.user %></cite>
         -- <small class="text-muted"><%= @property.created_at.to_time.strftime("%d %b %Y à %H:%M") %></small>
-
       </footer> 
     </blockquote>
   </div>
 
-  <div class="d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
+  <div class=" container d-flex flex-row justify-content-center align-itmes-center form-actions mb-4"> 
   
     <% if current_user.is_admin && @property.user == current_user %>
         <a class="btn btn-warning w-25 m-4" href = "<%= edit_property_path(@property)%>"><%= t("button.edit") %></a> 
@@ -36,9 +35,8 @@
   </div>
 
       <hr />
-  <p><%= t("comments.list") %></p>
-
-  <div class="feed-activity-list">
+  <div class=" container feed-activity-list">
+   <p><%= t("comments.list") %></p>
     <div id="" class="">
     <p id="notice"><%= notice %></p>
     <!-- Render to display the comment input field on the detail page of the property -->

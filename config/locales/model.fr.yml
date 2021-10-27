@@ -2,7 +2,8 @@ fr:
   activerecord:
     models:
       property: Propriété
-      comment: "Commentaire"
+      comment: Commentaire
+      appointment: Rendez-vous
     attributes:
       property:
         name: Nom de la propriété
@@ -12,3 +13,8 @@ fr:
         description: Description
         address: Adresse
         price: Prix
+      comment:
+        content: Contenu
+      appointment:
+        confirmed: Confirmé
+        status: Statut

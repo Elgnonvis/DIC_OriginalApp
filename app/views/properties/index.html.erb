@@ -1,4 +1,5 @@
-<div class="container text-center">
+<br>
+<div class="container text-center mt-5 ">
   <h1><%= t("properties.title") %></h1>
   <div class="d-flex mt-5">   
       <div class=" me-2">
@@ -13,7 +14,7 @@
 
           <%= f.label :status, class:"me-1 mt-2 w-50" %>
           <%= f.select( :status, ["Occupied", "Vaccant"], {include_blank: true}, {class: "form-select me-2 w-75"}) %>
-          <%= f.submit "Recherche", name: nil, data: { disable_with: false }, class: "btn btn-outline-success" %>
+          <%= f.submit t("button.search"), name: nil, data: { disable_with: false }, class: "btn btn-outline-success" %>
         <% end %>
       </div>
     </div>
@@ -66,5 +67,5 @@
   <div class="container pagination justify-content-center" >
       <%= paginate @properties, theme: 'twitter-bootstrap-4', pagination_class: "pagination-sm" %>
   </div>
-</div> <br><br><br>
+</div>
     

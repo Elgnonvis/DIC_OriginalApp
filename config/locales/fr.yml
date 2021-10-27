@@ -34,12 +34,14 @@ fr:
   appointments:
     title: "Liste de mes rendez-vous"
     requested_by: "Demandez par"
+    details: "Les détails de ce rendez-vous"
     add: "Demande de rendez-vous"
     new: "Formulaire de demande de rendez-vous"
-    edit: "Modification de rendez-vous"
+    edit: "Mise à du rendez-vous"
     created: "Demande de rendez-vous soumise avec succès"
     destroyed: "Demande de rendez-vous annulée avec succès"
     updated: "Demande de rendez-vous mise à jour avec succès"
+    confirmed: "Etat"
   properties:
     title: "Liste des propriétés"
     add: "Ajouter une propriété"
@@ -47,6 +49,7 @@ fr:
     by_type: "Propriété par type"
     name: "Nom"
     price: "Prix"
+    details: "Les détails de cette propriété"
     posted_by: "Posté par"
     address: "Adresse"
     type_of_property: "Type de propriété"
@@ -54,12 +57,23 @@ fr:
     created: "Propriété crée avec succès"
     destroyed: "Propriété supprimée avec succès"
     updated: "Propriété mise à jour avec succès"
-    edit: "Mise à jour de propriété"
+    edit: "Mise à jour de la propriété"
   comments:
     list: "Liste des commentaires"
     content: "Contenu"
     created: "Commentaire posté avec succès"
     updated: "Commentaire mise à jour avec succès"
+  users:
+    details: "Les détails de mon compte"
+    username: "Nom d'utilisateur"
+    lastname: "Nom de famille"
+    firstname: "Prénoms"
+    address: "Adresse (Ville /quartier)"
+    email: "Adresse mail"
+  contact:
+    msg: "Ceci est notre formulaire de conact!"
+    name: "Votre nom"
+    send: "Envoyez le Message"
   activerecord:
     errors:
       messages:
@@ -338,6 +352,7 @@ fr:
     destroy: 'Supprimer'
     show: 'Voir'
     back: 'Retour'
+    search: 'Recherche'
     invite: 'Invite'
     create_comment: "Ajouter commentaire"
     update_comment: "Mettre à jour commentaire"
@@ -345,7 +360,7 @@ fr:
     log_in: "Se connecter"
     sign_up: "S'inscrire"
     my_appointments: "Mes rendez-vous"
-    properties_list: "Liste propriétés"
+    properties_list: "Liste des propriétés"
     contact_us: "Nous contacter"
     brand: "OnlineEstateAgency | Accueil"
     admin: "Invité admin"

@@ -12,14 +12,14 @@
                           required: true, class: "contact-form-text-area mb-2" %></br>
 
       <%= f.label :message %>
-      <%= f.text_area :message, rows: 5, cols: 50, required: true, class: "contact-form-text-area",
+      <%= f.text_area :message, rows: 5, cols: 24, required: true, class: "contact-form-text-area",
                         placeholder: "Votre message"%>
 
-      <div class= "hidden">
+      <div class= "hidden d-none">
         <%= f.label :nickname %>
       </div>
 
-      <%= f.submit 'Envoyez le Message', class: 'btn btn-primary mb-2 mt-2' %>
+      <%= f.submit t("contact.send"), class: 'btn btn-primary mb-2 mt-2' %>
     </div>
   <% end %>
   <div class="col-md-6" id="flash-message">
