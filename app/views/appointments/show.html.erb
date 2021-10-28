@@ -9,6 +9,11 @@
 
     <p><strong><%= t("appointments.requested_by") %> :   </strong><%= @appointment.user.username %></p>
     <a href = "<%= edit_appointment_path(@appointment) %>" class="btn btn-warning mb-2"><%= t("button.edit") %></a>
+    <% if current_user.is_admin %>
+        <a href = "<%= appointments_path %>" class="btn btn-success mb-2"><%= t("button.back") %></a>
+     <% else %>
+        <a href="<%= me_appointments_path %>" class="btn btn-success mb-2" role="button"><%= t("button.back") %></a>
+     <% end %>
 
-    <a href = "<%= appointments_path %>" class="btn btn-success mb-2"><%= t("button.back") %></a>
 </div> <br>
+

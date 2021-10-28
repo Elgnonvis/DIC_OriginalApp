@@ -15,7 +15,7 @@ class Ability
     end
 
     if user.id
-      can [:me], Appointment, {user_id: user.id}
+      can [:create, :show, :edit, :update, :me], Appointment, {user_id: user.id}
     end
     
     if user.try(:is_admin?)

@@ -5,5 +5,9 @@
 <%= render 'form', appointment: @appointment %>
 
 <%= link_to t("button.show"), @appointment, class:"btn btn-info mb-2" %>
-<%= link_to t("button.back"), appointments_path, class:"btn btn-secondary mb-2" %>
+<% if current_user.is_admin %>
+    <a href = "<%= appointments_path %>" class="btn btn-success mb-2"><%= t("button.back") %></a>
+<% else %>
+    <a href="<%= me_appointments_path %>" class="btn btn-warning mb-2" role="button"><%= t("button.back") %></a>
+<% end %>
 </div>
