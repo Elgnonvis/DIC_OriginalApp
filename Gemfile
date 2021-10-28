@@ -48,6 +48,7 @@ gem 'jbuilder', '~> 2.5'
 #Internationalization
 # gem 'i18n'
 
+gem 'date_validator'
 
 gem 'rexml'
 group :development, :test do
