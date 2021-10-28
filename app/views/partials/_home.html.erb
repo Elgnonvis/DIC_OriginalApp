@@ -11,7 +11,11 @@
                 <div class="col-7 ">
                   <div class="form-group d-flex justify-content-center mb-2 mb-lg-0 ">
                     <a href="<%= properties_path %>" class="btn btn-warning me-5 ml-5" role="button"><%= t("button.properties_list") %></a>
-                    <a href="<%= me_appointments_path %>" class="btn btn-success me-5 " role="button"><%= t("button.my_appointments") %></a>
+                    <% if current_user.is_admin %>
+                      <a href="<%= appointments_path %>" class="btn btn-success me-5 " role="button"><%= t("button.appointments") %></a>
+                    <% else %>
+                      <a href="<%= me_appointments_path %>" class="btn btn-success me-5 " role="button"><%= t("button.my_appointments") %></a>
+                    <% end %>
                     <% if current_user.is_admin %>
                       <a href="<%= rails_admin_path %>" class="btn btn-info ml-2 " role="button">Management</a>
                     <% end %>

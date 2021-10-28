@@ -32,7 +32,7 @@
 ---
 fr:
   appointments:
-    title: "Liste de mes rendez-vous"
+    title: "Liste des rendez-vous"
     requested_by: "Demandez par"
     details: "Les détails de ce rendez-vous"
     add: "Demande de rendez-vous"
@@ -360,6 +360,8 @@ fr:
     log_in: "Se connecter"
     sign_up: "S'inscrire"
     my_appointments: "Mes rendez-vous"
+    appointments: "Les rendez-vous"
+
     properties_list: "Liste des propriétés"
     contact_us: "Nous contacter"
     brand: "OnlineEstateAgency | Accueil"

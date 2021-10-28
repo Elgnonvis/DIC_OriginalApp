@@ -337,6 +337,7 @@ en:
     brand: "OnlineEstateAgency | Home"
     create_comment: "Create Comment"
     update_comment: "Update Comment"
+    appointments: "Appointments List"
     admin: "Guest Admin"
     guest: "Simple Guest"
     top:
