@@ -45,6 +45,7 @@ load_and_authorize_resource
   def update
     respond_to do |format|
       if @appointment.update(appointment_params)
+
         flash[:success] = t("appointments.updated")
         format.html { redirect_to @appointment }
         format.json { render :show, status: :ok, location: @appointment }

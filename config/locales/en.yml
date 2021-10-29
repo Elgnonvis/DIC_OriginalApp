@@ -104,7 +104,7 @@ en:
     - Saturday
     formats:
       default: "%Y-%m-%d"
-      long: "%B %d, %Y"
+      long: "%Y-%m-%d"
       short: "%b %d"
     month_names:
     - 
@@ -274,7 +274,7 @@ en:
     am: am
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
+      long: "%Y-%m-%d %H:%M:%S"
       short: "%d %b %H:%M"
     pm: pm
   views:

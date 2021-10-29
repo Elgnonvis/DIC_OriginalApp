@@ -121,7 +121,7 @@ fr:
     - samedi
     formats:
       default: "%d/%m/%Y"
-      long: "%e %B %Y"
+      long: "%Y-%m-%d"
       short: "%e %b"
     month_names:
     - 
@@ -293,7 +293,8 @@ fr:
     am: am
     formats:
       default: "%d %B %Y %Hh %Mmin %Ss"
-      long: "%A %d %B %Y %Hh%M"
+      long: "%Y-%m-%d %H:%M:%S"
+      # long: "%A %d %B %Y %Hh%M"
       short: "%d %b %Hh%M"
     pm: pm
     views:

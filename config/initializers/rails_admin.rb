@@ -8,7 +8,11 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_user)
   config.authorize_with do
-    redirect_to main_app.root_path unless current_user.is_admin == true
+    if ! current_user.is_admin?
+      redirect_to main_app.root_path, flash: {alert:  'You are not an Admin!' }
+    end 
+    # redirect_to main_app.root_path unless current_user.is_admin == true
+    # flash: {alert:  'You are not an Admin!' }
   end
 
   ## == CancanCan ==
@@ -36,6 +40,13 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+
+    # field :date do
+    #   strftime_format do
+    #     '%d-%m-%Y %H:%M:%S'
+    #   end
+    # end
+    
 
     ## With an audit adapter, you can add:
     # history_index

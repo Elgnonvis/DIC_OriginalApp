@@ -3,7 +3,7 @@
   <h1><%= t("properties.details") %></h1>
   <div class=" container card-body">
     <div class="card-img-top">
-      <%= (0...@property.images.count).each do |image| %>
+      <% (0...@property.images.count).each do |image| %>
       <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
     <% end %>
     </div>  <br>
