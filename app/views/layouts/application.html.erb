@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
   </head>
 
   <body>
@@ -17,6 +18,12 @@
         <div class="alert alert-<%= name %>" role = "alert"> <%= msg %></div>
       <% end %>
       <%= yield %>
+
+      <script>
+        Weglot.initialize({
+            api_key: 'wg_0f04ea279781a35a85cd1fcb53482d2a6'
+        });
+    </script>
     </div>
     
     <%= render "partials/footer" %>

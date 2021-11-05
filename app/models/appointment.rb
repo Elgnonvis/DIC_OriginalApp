@@ -7,3 +7,4 @@ class Appointment < ApplicationRecord
   validates :date,
   :date => { :after => Time.now + 1.hour, :before => Time.now + 1.year }
 end
+# <div data-l="fr" class="wgcurrent wg-li fr"><a tabindex="-1" href="#" target="_self" role="none" id="weglot-language-fr">Français</a></div>

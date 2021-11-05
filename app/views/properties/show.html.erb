@@ -3,8 +3,13 @@
   <h1><%= t("properties.details") %></h1>
   <div class=" container card-body">
     <div class="card-img-top">
-      <% (0...@property.images.count).each do |image| %>
-      <%= image_tag(@property.images[image], style: "max-width: 1000px; max-height: 1000px") %>
+    
+    <% if false %>
+      Recuper les images de cloudinary lien : https://linuxtut.com/en/ad4662f971178a139565/
+      Pour ajouter des commentaires c'est la synthase à utiliser 
+    <% end %>    
+      <% @property.images.each do |image| %>
+      <%= image_tag(image, style: "max-width: 1000px; max-height: 1000px") %>
     <% end %>
     </div>  <br>
 
