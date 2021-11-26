@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script type="text/javascript" src="http://free-website-translation.com/scripts/fwt.js" /></script>
+
   </head>
 
   <body>
@@ -19,11 +20,7 @@
       <% end %>
       <%= yield %>
 
-      <script>
-        Weglot.initialize({
-            api_key: 'wg_0f04ea279781a35a85cd1fcb53482d2a6'
-        });
-    </script>
+      <a href="http://free-website-translation.com/?fr" id="ftwtranslation_button" hreflang="fr" title="" style="border:0;"><img src="http://free-website-translation.com/img/fwt_button_en.gif" id="ftwtranslation_image" alt="Outil de traduction gratuite de site Internet" style="border:0;"/></a><br /><a href="http://free-website-translation.com/?fr" style="font-size:10px;font-family:verdana;color:#000;margin:2px 4px;margin-top:0;">by FreeWebsiteTranslation.com</a>
     </div>
     
     <%= render "partials/footer" %>
