@@ -52,7 +52,7 @@
             <td class="status_row"><%= property.status %></td>
             <td><%= property.user.username if property.user %></td>
             
-            <td>
+            <td class="d-flex">
               <a href = "<%= property_path(property.id) %>" class="btn btn-primary"><%= t("button.show") %></a>
               <% if current_user.is_admin %>
                 <a href = "<%= edit_property_path(property) %>" class="btn btn-warning"><%= t("button.edit") %></a>
