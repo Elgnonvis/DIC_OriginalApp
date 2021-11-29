@@ -28,6 +28,8 @@
                 </div> 
             <% else %>
               <div class="col-12 text-end text-decoration-none">
+                <%= link_to t("button.admin"), guest_admin_path, method: :post, class: " me-2 btn btn-success "%>
+                <%= link_to t("button.guest"), guest_user_path, method: :post, class: " me-2 btn btn-info "%>
                 <a class="btn btn-success me-2" href="<%= new_user_session_path %>" role="button"><%= t("button.log_in") %></a>
                 <a class="btn btn-warning me-2" href="<%= new_user_registration_path %>" role="button"><%= t("button.sign_up") %></a>
                 <a class ="btn btn-info" href="<%= contact_path %>" role="button"><%= t("button.contact_us") %></a>
