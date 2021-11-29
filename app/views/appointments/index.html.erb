@@ -36,8 +36,8 @@
               <% end%>
             </td>
             <td class="d-flex">
-              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-primary"><%= t("button.show") %></a>
-              <a href = "<%= edit_appointment_path(appointment) %>" class="btn btn-warning"><%= t("button.edit") %></a>
+              <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-primary me-2"><%= t("button.show") %></a>
+              <a href = "<%= edit_appointment_path(appointment) %>" class="btn btn-warning me-2"><%= t("button.edit") %></a>
               <a href = "<%= appointment_path(appointment.id) %>" class="btn btn-danger", data-confirm="Are you sure?" data-method="DELETE"><%= t("button.delete") %></a>
             </td>
           </tr>
